@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-09-04 10:55:33
  * @Last Modified by: wzi
- * @Last Modified time: 2018-10-01 10:57:39
+ * @Last Modified time: 2018-10-01 17:23:29
  */
 
 import * as React from 'react';
@@ -17,7 +17,7 @@ const DATA = rouletteSlotData.rouletteSlotData();
 const App = () => {
     return (
         <ThemeProvider theme={theme}>
-            <ReactRouletteSlot data={DATA.list} />
+            <ReactRouletteSlot data={DATA.list} action="test" />
         </ThemeProvider>
     );
 };
