@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading 整体 1`] = `
+.c0 {
+  position: fixed;
+  top: calc(50% - 20px);
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 40px;
+}
+
+<Load>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <Loading
+        color="#ed6c44"
+        delay={1000}
+        height={40}
+        type="bars"
+        width={80}
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<svg class=\\"icon-blank\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\"></svg>
+",
+            }
+          }
+          delay={1000}
+          style={
+            Object {
+              "fill": "#ed6c44",
+              "height": 40,
+              "width": 80,
+            }
+          }
+        />
+      </Loading>
+    </div>
+  </styled.div>
+</Load>
+`;

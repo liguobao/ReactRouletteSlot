@@ -1,0 +1,164 @@
+{
+    "name": "react-rxjs-typescript-webpack-immer",
+    "version": "0.1.0",
+    "description": "react-rxjs-typescript-webpack-immer-example",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rm -rf dist/*.**.*s coverage/*",
+        "build": "npm run clean && webpack --mode production --progress",
+        "dev": "webpack-dev-server --mode development --hot --hotOnly",
+        "kill": "kill $(ps aux|grep 'tsc'|awk '{print $2}')",
+        "kill:port": "kill $(lsof -i |grep 'Chromium'|awk '{print $2}')",
+        "test": "jest",
+        "test:w": "jest --watch",
+        "open": "open ./coverage/lcov-report/index.html",
+        "lint": "tslint -p ./app/web/tsconfig.json",
+        "update": "yarn upgrade-interactive",
+        "cc": "jscpd -o dist/report.json"
+    },
+    "dependencies": {
+        "@types/autoprefixer": "^6.7.3",
+        "antd": "^3.9.2",
+        "antd-mobile": "2.2.5",
+        "babel-polyfill": "^6.26.0",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "happypack": "^5.0.0",
+        "history": "^4.7.2",
+        "immer": "1.6.0",
+        "jest": "^23.5.0",
+        "jest-styled-components": "^6.1.1",
+        "less": "^3.0.1",
+        "less-loader": "^4.1.0",
+        "mockjs": "^1.0.1-beta3",
+        "moment": "^2.22.2",
+        "rc-queue-anim": "^1.5.0",
+        "react": "^16.5.2",
+        "react-addons-test-utils": "^15.6.2",
+        "react-content-loader": "^3.1.2",
+        "react-dom": "^16.2.0",
+        "react-draggable": "^3.0.5",
+        "react-loadable": "^5.4.0",
+        "react-loading": "^2.0.3",
+        "react-malarquee": "^0.0.13",
+        "react-test-renderer": "^16.2.0",
+        "recompose": "^0.30.0",
+        "sinon": "^6.2.0",
+        "styled-components": "^3.3.2",
+        "ts-loader": "^5.0.0",
+        "tslint": "^5.9.1",
+        "types": "^0.1.1",
+        "typescript-plugin-styled-components": "^0.0.7",
+        "webpack-bundle-analyzer": "^2.13.1"
+    },
+    "devDependencies": {
+        "@types/enzyme": "^3.1.8",
+        "@types/jest": "^23.3.1",
+        "@types/react": "^16.0.35",
+        "@types/react-dom": "^16.0.3",
+        "autoprefixer": "^9.1.5",
+        "css-loader": "^1.0.0",
+        "enzyme": "^3.6.0",
+        "enzyme-adapter-react-16": "^1.4.0",
+        "enzyme-to-json": "^3.3.3",
+        "file-loader": "^2.0.0",
+        "history": "^4.7.2",
+        "html-webpack-plugin": "^3.0.6",
+        "jsdom": "12.0.0",
+        "jsdom-global": "3.0.2",
+        "mock": "^0.1.1",
+        "postcss-loader": "^3.0.0",
+        "progress-bar-webpack-plugin": "^1.10.0",
+        "react-app-rewire-less": "^2.1.1",
+        "react-hot-loader": "^4.3.6",
+        "react-perf-devtool": "^3.0.5",
+        "rxjs": "6.3.2",
+        "source-map-loader": "^0.2.3",
+        "style-loader": "^0.23.0",
+        "ts-import-plugin": "^1.5.5",
+        "ts-jest": "^23.1.4",
+        "typesafe-actions": "^2.0.4",
+        "typescript": "^3.0.3",
+        "uglifyjs-webpack-plugin": "^1.1.2",
+        "url-loader": "^1.0.1",
+        "utility-types": "^2.0.0",
+        "webpack": "^4.1.1",
+        "webpack-cli": "^3.1.0",
+        "webpack-dev-server": "^3.1.1"
+    },
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "ci": {
+        "version": "6, 7, 8"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitee.com:wzi/NBL.git"
+    },
+    "keywords": [
+        "immerjs"
+    ],
+    "author": "wZi",
+    "license": "ISC",
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "jest": {
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ],
+        "globalSetup": "<rootDir>/testConfig/setup.js",
+        "globalTeardown": "<rootDir>/testConfig/teardown.js",
+        "testEnvironment": "<rootDir>/testConfig/environment.js",
+        "setupTestFrameworkScriptFile": "<rootDir>/testConfig/setupTests.js",
+        "moduleDirectories": [
+            ".",
+            "src",
+            "node_modules"
+        ],
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|)$": "<rootDir>/config/fileMock.js"
+        },
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ],
+        "testMatch": [
+            "**/*.test.tsx",
+            "**/*.test.ts",
+            "**/*.test.js"
+        ],
+        "roots": [
+            "<rootDir>/src"
+        ],
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest",
+            "^.+\\.jsx?$": "babel-jest"
+        },
+        "globals": {
+            "ts-jest": {
+                "tsConfigFile": "./tsconfig.json"
+            },
+            "isJest": true
+        },
+        "collectCoverage": true,
+        "coverageReporters": [
+            "text-summary",
+            "lcov"
+        ],
+        "collectCoverageFrom": [
+            "src/**/*.{ts,tsx}"
+        ],
+        "coveragePathIgnorePatterns": [
+            "index.d.ts",
+            "src/typings",
+            "src/mock",
+        ]
+    }
+}

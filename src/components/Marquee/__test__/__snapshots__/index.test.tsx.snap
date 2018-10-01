@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserInfo 整体 1`] = `
+<styled.div>
+  <styled.span
+    type="pc"
+  >
+    <Styled(Styled(CustomIcon))
+      type="horn"
+    />
+    <styled.span>
+       公告 : 
+    </styled.span>
+  </styled.span>
+  <styled.span
+    type="pc"
+  >
+    <Marquee
+      fill={false}
+      hoverToPause={true}
+      rate={50}
+    >
+      哈哈哈
+    </Marquee>
+  </styled.span>
+</styled.div>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomIcon 整体 1`] = `
+.c0 {
+  width: 1.5em !important;
+  height: 1.5em !important;
+  margin-top: 5px;
+}
+
+<Styled(CustomIcon)
+  className="haha"
+  onClick={[MockFunction]}
+  size={null}
+  type="test"
+>
+  <CustomIcon
+    className="haha c0"
+    onClick={[MockFunction]}
+    size={null}
+    type="test"
+  >
+    <svg
+      aria-hidden={true}
+      className="icon haha c0"
+      onClick={[MockFunction]}
+      size={null}
+    >
+      <use
+        xlinkHref="#icon-test"
+      />
+    </svg>
+  </CustomIcon>
+</Styled(CustomIcon)>
+`;
