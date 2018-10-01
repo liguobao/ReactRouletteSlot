@@ -1,7 +1,7 @@
-# Shop
+# ReactRouletteSlot
 
 #### 项目介绍
-A shop includes shopping, gaming
+ ReactRouletteSlot
 
 #### 软件架构
 软件架构说明
