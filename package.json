@@ -158,7 +158,7 @@
         "coveragePathIgnorePatterns": [
             "index.d.ts",
             "src/typings",
-            "src/mock",
+            "src/mock"
         ]
     }
 }

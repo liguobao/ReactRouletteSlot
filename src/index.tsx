@@ -7,15 +7,10 @@
 
 /// <reference path="./index.d.ts" />
 import 'babel-polyfill';
-import history from '@config/history';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
-import { PersistGate } from 'redux-persist/integration/react';
 import App from './app';
-import store, { persistor } from '@store';
 
 const render = (Apps: any) => {
     ReactDOM.render(
@@ -31,13 +26,7 @@ const render = (Apps: any) => {
 };
 
 const Wrapper = () => (
-    <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-            <ConnectedRouter history={history}>
-                <App />
-            </ConnectedRouter>
-        </PersistGate>
-    </Provider>
+    <App />
 );
 
 const clientRender = () => {
