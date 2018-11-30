@@ -2,11 +2,11 @@
  * @Author: wzi
  * @Date: 2018-02-10 10:57:14
  * @Last Modified by: wzi
- * @Last Modified time: 2018-09-29 10:49:00
+ * @Last Modified time: 2018-11-30 14:59:11
  */
 
 import { css } from '@common/helper/styled-component';
-// import Digit from '@assets/fonts/digital-mono.ttf';
+
 const primary = '#ed6c44';
 export const theme = {
     primary: primary,
@@ -93,32 +93,7 @@ const GlobalStyle = css`
         }
     }
 
-    @keyframes shake {
-        /*透明度由0到1*/
-        0% {
-            transform: translateY(-5px) rotate(8deg);
-        }
-        100% {
-            transform: translateY(5px) rotate(8deg);
-        }
-    }
-
-    @keyframes fly {
-        0% {
-            top: 1000px;
-        }
-        100% {
-            top: -1px;
-        }
-    }
-    @keyframes flyPC {
-        0% {
-            top: 100px;
-        }
-        100% {
-            top: -1px;
-        }
-    }
+   
     @keyframes slide-right {
         0% {
             transform: translateX(-10px);

@@ -18,8 +18,8 @@
     },
     "dependencies": {
         "@types/autoprefixer": "^6.7.3",
-        "antd": "^3.9.2",
-        "antd-mobile": "2.2.5",
+        "antd": "3.10.9",
+        "antd-mobile": "2.2.6",
         "babel-polyfill": "^6.26.0",
         "es6-promise": "^4.2.5",
         "extract-text-webpack-plugin": "^3.0.2",
@@ -31,6 +31,7 @@
         "jest-styled-components": "^6.1.1",
         "less": "^3.0.1",
         "less-loader": "^4.1.0",
+        "loadash": "^1.0.0",
         "mockjs": "^1.0.1-beta3",
         "moment": "^2.22.2",
         "rc-queue-anim": "^1.5.0",
