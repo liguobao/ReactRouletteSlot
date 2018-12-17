@@ -1,22 +1,24 @@
 /*
  * @Author: wzi
- * @Date: 2018-09-04 10:36:01
+ * @Date: 2018-12-03 17:56:20
  * @Last Modified by: wzi
- * @Last Modified time: 2018-09-04 11:29:20
+ * @Last Modified time: 2018-12-03 17:56:58
  */
-const chalk = require('chalk');
-const fs = require('fs');
-const mkdirp = require('mkdirp');
-const os = require('os');
-const path = require('path');
+var { JSDOM } = require('jsdom');
 
-module.exports = async function() {
-    const browser = await puppeteer.launch({
-        headless: true,
-        slowMo: 200,
-        // executablePath: '/Applications/Chromium.app/Contents/MacOS/Chromium',
-    });
-    global.__BROWSER__ = browser;
-    mkdirp.sync(DIR);
-    fs.writeFileSync(path.join(DIR, 'wsEndpoint'), browser.wsEndpoint());
+var exposedProperties = ['window', 'navigator', 'document'];
+
+const { document } = (new JSDOM('')).window;
+global.document = document;
+
+global.window = document.defaultView;
+Object.keys(document.defaultView).forEach((property) => {
+    if (typeof global[property] === 'undefined') {
+        exposedProperties.push(property);
+        global[property] = document.defaultView[property];
+    }
+});
+
+global.navigator = {
+    userAgent: 'node.js',
 };

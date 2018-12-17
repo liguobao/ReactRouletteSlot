@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:23:08
  * @Last Modified by: wzi
- * @Last Modified time: 2018-11-30 16:47:04
+ * @Last Modified time: 2018-12-05 16:06:22
  */
 /// <reference path='index.d.ts' />
 import React from 'react';
@@ -21,7 +21,6 @@ import { compose } from '@common/helper/compose';
 import emptyEnhancer from '@common/HOC/Empty';
 import errorBoundaryEnhancer from '@common/HOC/ErrorBoundary';
 import Border from './Border';
-import { number } from 'prop-types';
 const MIN_ROUND = 2;
 type DataItem = {
     type: 'item' | 'button';
@@ -33,7 +32,9 @@ type ReactRouletteSlotProps = {
     // 每行个数
     row?: number;
     action: (
-        cb: ({ data, isWin }: { data: number | string; isWin: boolean }) => void
+        cb: (
+            { data, isWin }: { data: number | string; isWin?: boolean }
+        ) => void
     ) => void;
     size?: number;
 };
@@ -201,7 +202,7 @@ class ReactRouletteSlot extends React.Component<
     // 请求数据
     onFetch() {
         setTimeout(() => {
-            this.onResultReturn({ data: 1011 });
+            this.props.action(this.onResultReturn);
         }, 2000);
     }
     // 抽奖

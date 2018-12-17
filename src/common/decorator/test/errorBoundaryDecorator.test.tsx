@@ -2,13 +2,13 @@
  * @Author: wzi
  * @Date: 2018-01-31 16:40:02
  * @Last Modified by: wzi
- * @Last Modified time: 2018-04-25 17:16:58
+ * @Last Modified time: 2018-12-05 17:07:38
  */
 import ErrorBoundaryDecorator from '@common/decorator/errorBoundaryDecorator';
 import { mount } from 'enzyme';
 import expect from 'expect';
 import * as React from 'react';
-@ErrorBoundaryDecorator('方法错误提示', true, false)
+@ErrorBoundaryDecorator('方法错误提示')
 class Greeter extends React.Component<any, any> {
     constructor(props) {
         super(props);
@@ -71,5 +71,9 @@ describe('errorBoundaryClassDecorator', () => {
             </Greeter2>
         );
         expect(Greeter2.prototype.componentDidCatch).toHaveBeenCalled();
+    });
+    test('hide', () => {
+        const wrapper = mount(<Greeter test="test" />);
+        expect(wrapper.contains(<Greeter test="test" />)).toBeTruthy();
     });
 });

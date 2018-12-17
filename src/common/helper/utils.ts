@@ -7,7 +7,7 @@
  */
 import history from '@config/history';
 
-let _isMobile: boolean = null;
+// let _isMobile: boolean = null;
 const audio = {};
 const NEED_TRIM = ['phone', 'bankNum', 'lastPhone'];
 const NEED_JOIN = ['location', 'bankName', 'id'];
@@ -305,12 +305,20 @@ class StringHelper {
         }
         return parseInt(`${Math.random() * (over - under + 1) + under}`, 10);
     }
-
+    /**
+     * 取得地址中倒数第 index 个 / 中的参数
+     * @param idx 第几个/
+     * @param pathname 路径名称
+     */
     static locationHandler(
         idx: number,
-        location: Location = history.location as any
+        pathname: string = history.location.pathname
     ) {
-        let pathArray = location.pathname.slice(1).split('/');
+        if (!pathname.match(/\//)) {
+            return pathname;
+        }
+        let pathArray = pathname.slice(1).split('/');
+
         let result = null;
         if (idx < 0) {
             result = pathArray[pathArray.length + idx];
@@ -361,17 +369,17 @@ class Utils {
         return !!isIphone || !!isAndroid;
     }
 
-    /**
-     * 判断是否是手机
-     * @returns {boolean} 是否手机
-     * @memberof Utils
-     */
-    static isMobile(ua = navigator.userAgent, recount = false): boolean {
-        if (_isMobile === null || recount) {
-            _isMobile = Utils.judge(ua);
-        }
-        return _isMobile;
-    }
+    // /**
+    //  * 判断是否是手机
+    //  * @returns {boolean} 是否手机
+    //  * @memberof Utils
+    //  */
+    // static isMobile(ua = navigator.userAgent, recount = false): boolean {
+    //     if (_isMobile === null || recount) {
+    //         _isMobile = Utils.judge(ua);
+    //     }
+    //     return _isMobile;
+    // }
 
     static audioPlayer(ele, src, isLoop = false) {
         function playAudio(element) {

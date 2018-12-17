@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-09-04 10:55:33
  * @Last Modified by: wzi
- * @Last Modified time: 2018-11-30 10:53:32
+ * @Last Modified time: 2018-12-05 16:05:15
  */
 
 import * as React from 'react';
@@ -14,6 +14,9 @@ import rouletteSlotData from './mock/RRS';
 import ReactRouletteSlot from '@components/ReactRouletteSlot';
 injectGlobal`${MobileGlobalStyles}`;
 const DATA = rouletteSlotData.rouletteSlotData();
+const action = (cb) => {
+    cb({ data: 1011 });
+};
 const App = () => {
     return (
         <ThemeProvider theme={theme}>
@@ -22,7 +25,11 @@ const App = () => {
                     margin: '10px auto',
                 }}
             >
-                <ReactRouletteSlot data={DATA.list} action="test" size={300} />
+                <ReactRouletteSlot
+                    data={DATA.list}
+                    action={action}
+                    size={300}
+                />
             </div>
         </ThemeProvider>
     );
