@@ -7,7 +7,8 @@
 import { createHashHistory } from 'history';
 const mockHistory = {
     location: { pathname: '' },
-    paths: [],
-    push: (path) => mockHistory.push(path),
+    paths: ['test'],
+    push: (path) => mockHistory.paths.push(path),
+    goBack: () => mockHistory.paths.pop(),
 };
 export default (global.isJest ? mockHistory : createHashHistory());

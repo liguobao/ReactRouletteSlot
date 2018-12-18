@@ -7,7 +7,7 @@
  */
 import history from '@config/history';
 
-// let _isMobile: boolean = null;
+let _isMobile: boolean = null;
 const audio = {};
 const NEED_TRIM = ['phone', 'bankNum', 'lastPhone'];
 const NEED_JOIN = ['location', 'bankName', 'id'];
@@ -241,6 +241,9 @@ class StringHelper {
      * 格式化手机号码, *** **** ****
      */
     static formatPhone = (num: string) => {
+        if (num.length !== 11) {
+            return num;
+        }
         const phones: string[] = [];
         phones[0] = num.slice(0, 3);
         const phoneTemp: string[] = Utils.String.sliceStrByNum(`0${num}`, 4);
@@ -255,18 +258,25 @@ class StringHelper {
     static trimBlank = (value: string) => value.replace(/\ +/g, '');
     // 去星号
     static trimStar = (value: string) => value.replace(/\*+/g, '');
-    static joinChar = (key: string, value: string[]) =>
-        value.join(JOIN_CHAR[key]);
+    // 插入字符
+    static joinChar = (char: string, value: string[]) => value.join(char);
 
-    static valuesHandler = (
+    /**
+     * 提交数据统一处理方法
+     * @param values 需要处理的数据
+     * @param needTrim 需要去空格
+     * @param needJoin 需要插入字符
+     * @param money 表示金额的字段 需要乘以100
+     */
+    static valuesHandler(
         values: FormValuesObject,
         needTrim: string[] = NEED_TRIM,
         needJoin: string[] = NEED_JOIN,
         money: string[] = MONEY
-    ) => {
+    ) {
         for (const key in values) {
             if (needJoin.indexOf(key) !== -1 && values[key] instanceof Array) {
-                values[key] = Utils.String.joinChar(key, values[
+                values[key] = Utils.String.joinChar(JOIN_CHAR[key], values[
                     key
                 ] as string[]);
             } else if (needTrim.indexOf(key) !== -1) {
@@ -277,7 +287,7 @@ class StringHelper {
         }
 
         return values;
-    };
+    }
 
     /**
      * 从地址中获得某个参数的值
@@ -314,7 +324,7 @@ class StringHelper {
         idx: number,
         pathname: string = history.location.pathname
     ) {
-        if (!pathname.match(/\//)) {
+        if (!pathname.match(/^\//)) {
             return pathname;
         }
         let pathArray = pathname.slice(1).split('/');
@@ -325,9 +335,7 @@ class StringHelper {
         } else {
             result = pathArray[idx];
         }
-        if (!pathArray) {
-            result = '';
-        }
+
         return result;
     }
     /**
@@ -366,20 +374,21 @@ class Utils {
         const ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
         const isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
         const isAndroid = ua.match(/(Android)\s+([\d.]+)/);
+
         return !!isIphone || !!isAndroid;
     }
 
-    // /**
-    //  * 判断是否是手机
-    //  * @returns {boolean} 是否手机
-    //  * @memberof Utils
-    //  */
-    // static isMobile(ua = navigator.userAgent, recount = false): boolean {
-    //     if (_isMobile === null || recount) {
-    //         _isMobile = Utils.judge(ua);
-    //     }
-    //     return _isMobile;
-    // }
+    /**
+     * 判断是否是手机
+     * @returns {boolean} 是否手机
+     * @memberof Utils
+     */
+    static isMobile(ua = navigator.userAgent, recount = false): boolean {
+        if (_isMobile === null || recount) {
+            _isMobile = Utils.judge(ua);
+        }
+        return _isMobile;
+    }
 
     static audioPlayer(ele, src, isLoop = false) {
         function playAudio(element) {
