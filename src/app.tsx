@@ -15,7 +15,7 @@ import ReactRouletteSlot from '@components/ReactRouletteSlot';
 injectGlobal`${MobileGlobalStyles}`;
 const DATA = rouletteSlotData.rouletteSlotData();
 const action = (cb) => {
-    cb({ data: 1011 });
+    cb({ data: 1000 });
 };
 const App = () => {
     return (

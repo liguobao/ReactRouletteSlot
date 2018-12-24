@@ -25,6 +25,7 @@ const MIN_ROUND = 2;
 type DataItem = {
     type: 'item' | 'button';
     data?: ReactRouletteSlot.RouletteSlotDataItem;
+    // 实际上数据的顺序
     position?: number;
 };
 type ReactRouletteSlotProps = {
@@ -36,11 +37,13 @@ type ReactRouletteSlotProps = {
             { data, isWin }: { data: number | string; isWin?: boolean }
         ) => void
     ) => void;
+    // 宽跟高
     size?: number;
 };
 type ReactRouletteSlotState = {
     // 处理过后的数据
     board: DataItem[][];
+    boardData: DataItem[];
     // 记录当前的active 位置
     pointer: number;
     // 记录转了几圈
@@ -65,12 +68,13 @@ type ReactRouletteSlotState = {
     props: ['data'],
     state: ['pointer', 'run'],
 })
-class ReactRouletteSlot extends React.Component<
+export class ReactRouletteSlot extends React.Component<
     ReactRouletteSlotProps,
     ReactRouletteSlotState
 > {
     state = {
         board: [[]],
+        boardData: [],
         pointer: -1,
         target: null,
         round: 0,
@@ -95,10 +99,7 @@ class ReactRouletteSlot extends React.Component<
     }
     isActive = (position: number) => this.state.pointer === position;
     // 活动棋盘的数据
-    getBoardData = () =>
-        this.state.board.reduce((array, cur) => {
-            return array.concat(cur);
-        }, []);
+    getBoardData = () => this.state.boardData;
 
     // 寻找目标节点
     findTargetPointer = (target) =>
@@ -132,8 +133,9 @@ class ReactRouletteSlot extends React.Component<
         col: number,
         length: number,
         initData: ReactRouletteSlot.RouletteSlotData
-    ) => {
+    ): [DataItem[][], DataItem[]] => {
         const board = [];
+        const boardData = [];
         let position = 0;
         let Y = 0;
         for (let x = 0; x < col; x++) {
@@ -165,32 +167,38 @@ class ReactRouletteSlot extends React.Component<
                     };
                     position = -1;
                 }
+                boardData.push(board[x][Y]);
             }
         }
-        return board;
+        return [board, boardData];
     };
-    // 加入按钮
-    joinButton = (board) => {
+    // 加入抽奖按钮
+    joinButton = (board: DataItem[][], boardData: DataItem[], row: number) => {
         const temp = board[1][1];
-        board[1][1] = { type: 'button' };
+        const button: DataItem = { type: 'button' };
+        board[1][1] = button;
         board[1][2] = temp;
+        boardData.splice(row + 1, 0, button);
     };
     // 根据数据生成行数, 列数, 棋盘, 抽奖按钮的数据
     dataHandler = (initData = this.props.data) => {
         const row = this.getRow(initData);
         const col = this.getCol(row);
-        const board: DataItem[][] = this.getBoard(
+        const [board, boardData] = this.getBoard(
             row,
             col,
             initData.length,
             initData
         );
-        this.joinButton(board);
+        this.joinButton(board, boardData, row);
         this.setState({
             board,
             row,
             col,
+            boardData,
         });
+        console.log(board);
+        console.log(boardData);
         this.getLuckyButtonPosition(initData, row);
     };
     // 请求开奖结果的回调
@@ -219,7 +227,7 @@ class ReactRouletteSlot extends React.Component<
             this.run();
         }
     };
-    getTime = (time, interval: number = -50) => {
+    getTime = (time: number, interval: number = -50) => {
         if (time < 100) {
             return 100;
         } else {
@@ -246,7 +254,14 @@ class ReactRouletteSlot extends React.Component<
         });
         return clearInterval(this.timer);
     };
-    runBeforeEnd = (pointer: number, time) => {
+    runBeforeEnd = (pointer: number, time: number) => {
+        if (this.state.endRound < 2) {
+            if (pointer === 0) {
+                this.setState({ endRound: this.state.endRound + 1 });
+            }
+            return this.run(this.getTime(time));
+        }
+
         const target = this.findTargetPointer(this.state.target);
         if (!target) {
             window.Alert.success('请稍后重试');

@@ -6,8 +6,11 @@
  */
 declare namespace ReactRouletteSlot {
     interface RouletteSlotDataItem {
+        // 名称
         label: string | JSX.Element;
+        // 图片
         img: string;
+        // 商品 ID
         id: number;
     }
     type RouletteSlotData = RouletteSlotDataItem[];

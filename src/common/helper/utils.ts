@@ -390,15 +390,18 @@ class Utils {
         return _isMobile;
     }
 
-    static audioPlayer(ele, src, isLoop = false) {
+    static audioPlayer(ele, src = '', isLoop = false) {
         function playAudio(element) {
+            console.log('playAudio');
             const result = element.play();
+            // 如果播放失败
             result.catch(() => {
-                function play() {
+                console.log('catch');
+                const play = () => {
                     element.play();
                     document.removeEventListener('click', play);
                     document.removeEventListener('tap', play);
-                }
+                };
                 document.addEventListener('tap', play);
                 document.addEventListener('click', play);
             });

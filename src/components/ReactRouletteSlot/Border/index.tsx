@@ -72,6 +72,7 @@ export default class Board extends React.Component<BoardProps, BoardState> {
                     bottom={this.getBottom(value, type)}
                     right={this.getRight(value, type)}
                     isRun={this.props.isRun}
+                    key={value}
                 />
             );
         }

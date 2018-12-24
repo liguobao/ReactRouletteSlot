@@ -5,24 +5,12 @@
  * @Last Modified time: 2018-09-18 16:03:07
  */
 import Utils from '@common/helper/utils';
-
 if (Utils.isMobile()) {
-
-    require.ensure(
-        [],
-        function(require) {
-            const MobileAlert = require('./mobile').default;
-            window.Alert = new MobileAlert();
-        },
-        'mobile'
-    );
+    import('./mobile').then((MobileAlert) => {
+        window.Alert = new MobileAlert.default();
+    });
 } else {
-    require.ensure(
-        [],
-        function(require) {
-            const PCAlert = require('./pc').default;
-            window.Alert = new PCAlert();
-        },
-        'pc'
-    );
+    import('./pc').then((PCAlert) => {
+        window.Alert = new PCAlert.default();
+    });
 }

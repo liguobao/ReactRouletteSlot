@@ -6,7 +6,6 @@
  */
 /// <reference path="./typings/globalType.d.ts" />
 /// <reference path="./typings/redux.d.ts" />
-/// <reference path="./store/modules/user/index.d.ts" />
 declare var EASY_ENV_IS_NODE: boolean;
 declare var EASY_ENV_IS_BROWSER: boolean;
 declare var EASY_ENV_IS_DEV: boolean;

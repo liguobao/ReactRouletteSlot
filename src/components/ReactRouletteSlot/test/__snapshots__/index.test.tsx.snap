@@ -1,0 +1,1391 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading 整体 1`] = `
+.c9 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  table-layout: fixed;
+  background: #ae184e;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.c10 {
+  padding: 2px;
+}
+
+.c12 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c12:first-child {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.c11 {
+  background: #fdf29a;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c14 {
+  opacity: 1;
+  padding: 2px;
+}
+
+.c14:hover {
+  cursor: pointer;
+}
+
+.c15 {
+  width: 100%;
+  height: 100%;
+  background: #f64222;
+  color: white;
+  font-size: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c13 {
+  margin-top: 20%;
+}
+
+.c0 {
+  border-radius: 10px;
+  border-collapse: separate;
+  position: relative;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  margin: 0 auto;
+  background: #fc5a38;
+}
+
+.c1 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: NaNpx;
+  bottom: px;
+  right: px;
+  background: #4999da;
+}
+
+.c2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: NaNpx;
+  bottom: px;
+  right: px;
+  background: yellow;
+}
+
+.c3 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: px;
+  left: NaNpx;
+  bottom: 5px;
+  right: px;
+  background: #4999da;
+}
+
+.c4 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: px;
+  left: NaNpx;
+  bottom: 5px;
+  right: px;
+  background: yellow;
+}
+
+.c5 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: 5px;
+  bottom: px;
+  right: px;
+  background: #4999da;
+}
+
+.c6 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: 5px;
+  bottom: px;
+  right: px;
+  background: yellow;
+}
+
+.c7 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: px;
+  bottom: px;
+  right: 5px;
+  background: #4999da;
+}
+
+.c8 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: px;
+  bottom: px;
+  right: 5px;
+  background: yellow;
+}
+
+<ReactRouletteSlot
+  action={[Function]}
+  data={
+    Array [
+      Object {
+        "id": 1000,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Larry",
+      },
+      Object {
+        "id": 1001,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Joseph",
+      },
+      Object {
+        "id": 1003,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Paul",
+      },
+      Object {
+        "id": 1004,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Ronald",
+      },
+      Object {
+        "id": 1005,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Helen",
+      },
+      Object {
+        "id": 1006,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Maria",
+      },
+      Object {
+        "id": 1007,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Mark",
+      },
+      Object {
+        "id": 1008,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Mark",
+      },
+      Object {
+        "id": 1009,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Carol",
+      },
+      Object {
+        "id": 1010,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Ronald",
+      },
+      Object {
+        "id": 1011,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Nancy",
+      },
+      Object {
+        "id": 1012,
+        "img": "http://dummyimage.com/30x30",
+        "label": "Michelle",
+      },
+    ]
+  }
+>
+  <Board
+    col={4}
+    isRun={false}
+    row={4}
+  >
+    <styled.div>
+      <div
+        className="c0"
+      >
+        <Component>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="0"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c1"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="1"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c2"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="2"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c1"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="3"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c2"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="4"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c1"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="5"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c2"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="6"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c1"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="7"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c2"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="8"
+            left={NaN}
+            right={null}
+            top={5}
+          >
+            <div
+              className="c1"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={true}
+            isRun={false}
+            key="0"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c3"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={false}
+            isRun={false}
+            key="1"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c4"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={true}
+            isRun={false}
+            key="2"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c3"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={false}
+            isRun={false}
+            key="3"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c4"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={true}
+            isRun={false}
+            key="4"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c3"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={false}
+            isRun={false}
+            key="5"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c4"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={true}
+            isRun={false}
+            key="6"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c3"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={false}
+            isRun={false}
+            key="7"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c4"
+            />
+          </styled.div>
+          <styled.div
+            bottom={5}
+            isOdd={true}
+            isRun={false}
+            key="8"
+            left={NaN}
+            right={null}
+            top={null}
+          >
+            <div
+              className="c3"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="0"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c5"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="1"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c6"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="2"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c5"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="3"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c6"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="4"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c5"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="5"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c6"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="6"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c5"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="7"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c6"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="8"
+            left={5}
+            right={null}
+            top={NaN}
+          >
+            <div
+              className="c5"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="0"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c7"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="1"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c8"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="2"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c7"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="3"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c8"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="4"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c7"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="5"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c8"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="6"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c7"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={false}
+            isRun={false}
+            key="7"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c8"
+            />
+          </styled.div>
+          <styled.div
+            bottom={null}
+            isOdd={true}
+            isRun={false}
+            key="8"
+            left={null}
+            right={5}
+            top={NaN}
+          >
+            <div
+              className="c7"
+            />
+          </styled.div>
+        </Component>
+        <Component>
+          <styled.table>
+            <table
+              className="c9"
+            >
+              <tbody>
+                <styled.tr
+                  key="0"
+                >
+                  <tr
+                    className=""
+                  >
+                    <Component
+                      data={
+                        Object {
+                          "id": 1000,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Larry",
+                        }
+                      }
+                      key="0"
+                      position={0}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Larry
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      data={
+                        Object {
+                          "id": 1001,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Joseph",
+                        }
+                      }
+                      key="1"
+                      position={1}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Joseph
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      data={
+                        Object {
+                          "id": 1003,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Paul",
+                        }
+                      }
+                      key="2"
+                      position={2}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Paul
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      data={
+                        Object {
+                          "id": 1004,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Ronald",
+                        }
+                      }
+                      key="3"
+                      position={3}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Ronald
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                  </tr>
+                </styled.tr>
+                <styled.tr
+                  key="1"
+                >
+                  <tr
+                    className=""
+                  >
+                    <Component
+                      data={
+                        Object {
+                          "id": 1012,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Michelle",
+                        }
+                      }
+                      key="0"
+                      position={11}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Michelle
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      key="1"
+                    >
+                      <styled.td
+                        disable={false}
+                        onClick={[Function]}
+                        x={2}
+                        y={2}
+                      >
+                        <td
+                          className="c14"
+                          colSpan={2}
+                          onClick={[Function]}
+                          rowSpan={2}
+                          x={2}
+                          y={2}
+                        >
+                          <styled.div>
+                            <div
+                              className="c15"
+                            >
+                              点击抽奖
+                            </div>
+                          </styled.div>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      data={
+                        Object {
+                          "id": 1005,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Helen",
+                        }
+                      }
+                      key="2"
+                      position={4}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Helen
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                  </tr>
+                </styled.tr>
+                <styled.tr
+                  key="2"
+                >
+                  <tr
+                    className=""
+                  >
+                    <Component
+                      data={
+                        Object {
+                          "id": 1011,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Nancy",
+                        }
+                      }
+                      key="0"
+                      position={10}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Nancy
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      data={
+                        Object {
+                          "id": 1006,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Maria",
+                        }
+                      }
+                      key="1"
+                      position={5}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Maria
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                  </tr>
+                </styled.tr>
+                <styled.tr
+                  key="3"
+                >
+                  <tr
+                    className=""
+                  >
+                    <Component
+                      data={
+                        Object {
+                          "id": 1010,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Ronald",
+                        }
+                      }
+                      key="0"
+                      position={9}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Ronald
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      data={
+                        Object {
+                          "id": 1009,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Carol",
+                        }
+                      }
+                      key="1"
+                      position={8}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Carol
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      data={
+                        Object {
+                          "id": 1008,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Mark",
+                        }
+                      }
+                      key="2"
+                      position={7}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Mark
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                    <Component
+                      data={
+                        Object {
+                          "id": 1007,
+                          "img": "http://dummyimage.com/30x30",
+                          "label": "Mark",
+                        }
+                      }
+                      key="3"
+                      position={6}
+                    >
+                      <styled.td>
+                        <td
+                          className="c10"
+                        >
+                          <styled.span
+                            active={false}
+                          >
+                            <span
+                              className="c11"
+                            >
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <styled.img
+                                    src="http://dummyimage.com/30x30"
+                                  >
+                                    <img
+                                      className="c13"
+                                      src="http://dummyimage.com/30x30"
+                                    />
+                                  </styled.img>
+                                </span>
+                              </styled.span>
+                              <styled.span>
+                                <span
+                                  className="c12"
+                                >
+                                  <div>
+                                    Mark
+                                  </div>
+                                </span>
+                              </styled.span>
+                            </span>
+                          </styled.span>
+                        </td>
+                      </styled.td>
+                    </Component>
+                  </tr>
+                </styled.tr>
+              </tbody>
+            </table>
+          </styled.table>
+        </Component>
+      </div>
+    </styled.div>
+  </Board>
+</ReactRouletteSlot>
+`;
