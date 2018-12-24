@@ -21,13 +21,11 @@ const render = (Apps: any) => {
         ) : (
             <Apps />
         ),
-        document.getElementById('app')
+        document.getElementById('app') || document.createElement('div')
     );
 };
 
-const Wrapper = () => (
-    <App />
-);
+const Wrapper = () => <App />;
 
 const clientRender = () => {
     // tslint:disable-next-line:variable-name

@@ -65,7 +65,7 @@ type ReactRouletteSlotState = {
     col: number;
 };
 @shouldUpdate({
-    props: ['data'],
+    props: ['data', 'action'],
     state: ['pointer', 'run'],
 })
 export class ReactRouletteSlot extends React.Component<
@@ -102,7 +102,7 @@ export class ReactRouletteSlot extends React.Component<
     getBoardData = () => this.state.boardData;
 
     // 寻找目标节点
-    findTargetPointer = (target) =>
+    findTargetPointer = (target: number) =>
         this.getBoardData().find((cur) => {
             if (cur.type === 'button') {
                 return false;
@@ -139,9 +139,8 @@ export class ReactRouletteSlot extends React.Component<
         let position = 0;
         let Y = 0;
         for (let x = 0; x < col; x++) {
-            if (!board[x]) {
-                board[x] = [];
-            }
+            board[x] = [];
+
             for (let y = 0; y < row; y++) {
                 Y = y;
                 if (x === 0) {
@@ -152,21 +151,21 @@ export class ReactRouletteSlot extends React.Component<
                 } else if (y === 0 || y === 1) {
                     if (y === 0) {
                         position = length - x;
-                    } else if (y === 1) {
+                    } else {
                         position = row + x - 1;
                     }
                 }
                 if (position === -1) {
                     break;
                 }
-                if (position !== -1) {
-                    board[x][Y] = {
-                        position,
-                        data: initData[position],
-                        type: 'item',
-                    };
-                    position = -1;
-                }
+
+                board[x][Y] = {
+                    position,
+                    data: initData[position],
+                    type: 'item',
+                };
+                position = -1;
+
                 boardData.push(board[x][Y]);
             }
         }
@@ -181,7 +180,8 @@ export class ReactRouletteSlot extends React.Component<
         boardData.splice(row + 1, 0, button);
     };
     // 根据数据生成行数, 列数, 棋盘, 抽奖按钮的数据
-    dataHandler = (initData = this.props.data) => {
+    dataHandler = () => {
+        const initData = this.props.data;
         const row = this.getRow(initData);
         const col = this.getCol(row);
         const [board, boardData] = this.getBoard(
@@ -197,8 +197,7 @@ export class ReactRouletteSlot extends React.Component<
             col,
             boardData,
         });
-        console.log(board);
-        console.log(boardData);
+
         this.getLuckyButtonPosition(initData, row);
     };
     // 请求开奖结果的回调
@@ -226,6 +225,14 @@ export class ReactRouletteSlot extends React.Component<
             this.onFetch();
             this.run();
         }
+    };
+    onSuccess = (target: DataItem) => {
+        window.Alert.success(`恭喜您获得${target.data.label}`);
+        return this.reset();
+    };
+    onFail = () => {
+        window.Alert.success('请稍后重试');
+        return this.reset();
     };
     getTime = (time: number, interval: number = -50) => {
         if (time < 100) {
@@ -264,12 +271,10 @@ export class ReactRouletteSlot extends React.Component<
 
         const target = this.findTargetPointer(this.state.target);
         if (!target) {
-            window.Alert.success('请稍后重试');
-            return this.reset();
+            return this.onFail();
         }
-        if (target && target.position === pointer) {
-            window.Alert.success(`恭喜您获得${target.data.label}`);
-            return this.reset();
+        if (target.position === pointer) {
+            return this.onSuccess(target);
         }
         // 进入结束流程
         this.run(this.getTime(time, 30));
@@ -323,7 +328,9 @@ export class ReactRouletteSlot extends React.Component<
             <this.LuckyButton key={index} />
         );
     // 每一行
-    Line = (line, key) => <Line key={key}>{line.map(this.Grid)}</Line>;
+    Line = (line: DataItem[], key: number) => (
+        <Line key={key}>{line.map(this.Grid)}</Line>
+    );
     // 棋盘
     Board = () => (
         <Wrapper size={this.props.size}>
@@ -348,7 +355,10 @@ export default compose(
     emptyEnhancer(
         ({ data }: { data: ReactRouletteSlot.RouletteSlotData }) =>
             !data || data.length === 0 || data.length % 2 !== 0,
-        () => window.Alert.fail('数据不符合要求')
+        () => {
+            window.Alert && window.Alert.fail('数据不符合要求');
+            return null;
+        }
     ),
     errorBoundaryEnhancer('角子机载入失败')
 )(ReactRouletteSlot);

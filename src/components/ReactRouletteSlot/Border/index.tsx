@@ -27,7 +27,7 @@ type BoardState = {};
 })
 export default class Board extends React.Component<BoardProps, BoardState> {
     getTotalSize = () => this.props.size + 20 * 2;
-    getTop = (index, type: BallPositionType) => {
+    getTop = (index: number, type: BallPositionType) => {
         switch (type) {
             case BallPositionType.left:
             case BallPositionType.right:
@@ -41,7 +41,7 @@ export default class Board extends React.Component<BoardProps, BoardState> {
                 return null;
         }
     };
-    getLeft = (index, type: BallPositionType) => {
+    getLeft = (index: number, type: BallPositionType) => {
         switch (type) {
             case BallPositionType.bottom:
             case BallPositionType.top:
@@ -56,9 +56,9 @@ export default class Board extends React.Component<BoardProps, BoardState> {
         }
     };
 
-    getBottom = (_index, type: BallPositionType) =>
+    getBottom = (_index: number, type: BallPositionType) =>
         type === BallPositionType.bottom ? 5 : null;
-    getRight = (_index, type: BallPositionType) =>
+    getRight = (_index: number, type: BallPositionType) =>
         type === BallPositionType.right ? 5 : null;
 
     getBalls = (size: number, type: BallPositionType) => {

@@ -1,0 +1,1589 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Border running 1`] = `
+.c0 {
+  border-radius: 10px;
+  border-collapse: separate;
+  position: relative;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  margin: 0 auto;
+  background: #fc5a38;
+}
+
+.c1 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: NaNpx;
+  bottom: px;
+  right: px;
+  -webkit-animation: blueWinkle 1s infinite alternate;
+  animation: blueWinkle 1s infinite alternate;
+}
+
+.c2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: NaNpx;
+  bottom: px;
+  right: px;
+  -webkit-animation: yellowWinkle 1s infinite alternate;
+  animation: yellowWinkle 1s infinite alternate;
+}
+
+.c3 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: px;
+  left: NaNpx;
+  bottom: 5px;
+  right: px;
+  -webkit-animation: blueWinkle 1s infinite alternate;
+  animation: blueWinkle 1s infinite alternate;
+}
+
+.c4 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: px;
+  left: NaNpx;
+  bottom: 5px;
+  right: px;
+  -webkit-animation: yellowWinkle 1s infinite alternate;
+  animation: yellowWinkle 1s infinite alternate;
+}
+
+.c5 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: 5px;
+  bottom: px;
+  right: px;
+  -webkit-animation: blueWinkle 1s infinite alternate;
+  animation: blueWinkle 1s infinite alternate;
+}
+
+.c6 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: 5px;
+  bottom: px;
+  right: px;
+  -webkit-animation: yellowWinkle 1s infinite alternate;
+  animation: yellowWinkle 1s infinite alternate;
+}
+
+.c7 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: px;
+  bottom: px;
+  right: 5px;
+  -webkit-animation: blueWinkle 1s infinite alternate;
+  animation: blueWinkle 1s infinite alternate;
+}
+
+.c8 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: px;
+  bottom: px;
+  right: 5px;
+  -webkit-animation: yellowWinkle 1s infinite alternate;
+  animation: yellowWinkle 1s infinite alternate;
+}
+
+<Board
+  col={3}
+  isRun={true}
+  row={3}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <Component>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="0"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="1"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="2"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="3"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="4"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="5"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="6"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={true}
+          key="0"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={true}
+          key="1"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={true}
+          key="2"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={true}
+          key="3"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={true}
+          key="4"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={true}
+          key="5"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={true}
+          key="6"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="0"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="1"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="2"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="3"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="4"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="5"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="6"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="0"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="1"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="2"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="3"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="4"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={true}
+          key="5"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={true}
+          key="6"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+      </Component>
+      <Child>
+        <div>
+          测试子组件
+        </div>
+      </Child>
+    </div>
+  </styled.div>
+</Board>
+`;
+
+exports[`Border size 为3 1`] = `
+.c0 {
+  border-radius: 10px;
+  border-collapse: separate;
+  position: relative;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  margin: 0 auto;
+  background: #fc5a38;
+}
+
+.c1 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: NaNpx;
+  bottom: px;
+  right: px;
+  background: #4999da;
+}
+
+.c2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: NaNpx;
+  bottom: px;
+  right: px;
+  background: yellow;
+}
+
+.c3 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: px;
+  left: NaNpx;
+  bottom: 5px;
+  right: px;
+  background: #4999da;
+}
+
+.c4 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: px;
+  left: NaNpx;
+  bottom: 5px;
+  right: px;
+  background: yellow;
+}
+
+.c5 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: 5px;
+  bottom: px;
+  right: px;
+  background: #4999da;
+}
+
+.c6 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: 5px;
+  bottom: px;
+  right: px;
+  background: yellow;
+}
+
+.c7 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: px;
+  bottom: px;
+  right: 5px;
+  background: #4999da;
+}
+
+.c8 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: px;
+  bottom: px;
+  right: 5px;
+  background: yellow;
+}
+
+<Board
+  col={3}
+  isRun={false}
+  row={3}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <Component>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="0"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="1"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="2"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="3"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="4"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="5"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="6"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="0"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={false}
+          key="1"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="2"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={false}
+          key="3"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="4"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={false}
+          key="5"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="6"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="0"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="1"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="2"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="3"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="4"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="5"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="6"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="0"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="1"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="2"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="3"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="4"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="5"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="6"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+      </Component>
+      <Child>
+        <div>
+          测试子组件
+        </div>
+      </Child>
+    </div>
+  </styled.div>
+</Board>
+`;
+
+exports[`Border 整体 1`] = `
+.c0 {
+  border-radius: 10px;
+  border-collapse: separate;
+  position: relative;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  margin: 0 auto;
+  background: #fc5a38;
+}
+
+.c1 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: NaNpx;
+  bottom: px;
+  right: px;
+  background: #4999da;
+}
+
+.c2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: NaNpx;
+  bottom: px;
+  right: px;
+  background: yellow;
+}
+
+.c3 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: px;
+  left: NaNpx;
+  bottom: 5px;
+  right: px;
+  background: #4999da;
+}
+
+.c4 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: px;
+  left: NaNpx;
+  bottom: 5px;
+  right: px;
+  background: yellow;
+}
+
+.c5 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: 5px;
+  bottom: px;
+  right: px;
+  background: #4999da;
+}
+
+.c6 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: 5px;
+  bottom: px;
+  right: px;
+  background: yellow;
+}
+
+.c7 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: px;
+  bottom: px;
+  right: 5px;
+  background: #4999da;
+}
+
+.c8 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: NaNpx;
+  left: px;
+  bottom: px;
+  right: 5px;
+  background: yellow;
+}
+
+<Board
+  col={4}
+  isRun={false}
+  row={4}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <Component>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="0"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="1"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="2"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="3"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="4"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="5"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="6"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="7"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c2"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="8"
+          left={NaN}
+          right={null}
+          top={5}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="0"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={false}
+          key="1"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="2"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={false}
+          key="3"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="4"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={false}
+          key="5"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="6"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={false}
+          isRun={false}
+          key="7"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c4"
+          />
+        </styled.div>
+        <styled.div
+          bottom={5}
+          isOdd={true}
+          isRun={false}
+          key="8"
+          left={NaN}
+          right={null}
+          top={null}
+        >
+          <div
+            className="c3"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="0"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="1"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="2"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="3"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="4"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="5"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="6"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="7"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c6"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="8"
+          left={5}
+          right={null}
+          top={NaN}
+        >
+          <div
+            className="c5"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="0"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="1"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="2"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="3"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="4"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="5"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="6"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={false}
+          isRun={false}
+          key="7"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c8"
+          />
+        </styled.div>
+        <styled.div
+          bottom={null}
+          isOdd={true}
+          isRun={false}
+          key="8"
+          left={null}
+          right={5}
+          top={NaN}
+        >
+          <div
+            className="c7"
+          />
+        </styled.div>
+      </Component>
+      <Child>
+        <div>
+          测试子组件
+        </div>
+      </Child>
+    </div>
+  </styled.div>
+</Board>
+`;

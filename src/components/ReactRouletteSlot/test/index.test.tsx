@@ -6,6 +6,7 @@
  */
 import React from 'react';
 import { ReactRouletteSlot } from '@components/ReactRouletteSlot';
+import DefaultReactRouletteSlot from '@components/ReactRouletteSlot';
 import '@common/helper/Alert';
 import { mount } from 'enzyme';
 import 'jest-styled-components';
@@ -27,20 +28,84 @@ const data = [
 jest.useFakeTimers();
 
 describe('Loading', () => {
-    let _wrapper;
+    let _wrapper, _instance, _unMount, _mount;
     beforeAll(() => {
+        _unMount = jest.spyOn(
+            ReactRouletteSlot.prototype,
+            'componentWillUnmount'
+        );
+        _mount = jest.spyOn(ReactRouletteSlot.prototype, 'componentWillMount');
         const action = (cb) => {
             cb({ data: 1011 });
         };
 
         _wrapper = mount(<ReactRouletteSlot data={data} action={action} />);
+        _instance = _wrapper.instance();
+        jest.spyOn(_instance, 'onFetch');
+        jest.spyOn(_instance, 'onResultReturn');
+        jest.spyOn(_instance, 'onSuccess');
+        jest.spyOn(_instance, 'onFail');
+        jest.spyOn(_instance, 'reset');
     });
     test('整体', () => {
         expect(toJson(_wrapper)).toMatchSnapshot();
+        expect(_mount).toHaveBeenCalledTimes(1);
     });
     test('点击抽奖', () => {
-        const instance = _wrapper.instance();
-        instance.onClick();
+        _instance.onClick();
+        expect(_instance.onFetch).toBeCalled();
+    });
+    test('数据返回', () => {
         jest.advanceTimersByTime(20000);
+        expect(_instance.onResultReturn).toBeCalled();
+        expect(_instance.state.endRound).toBe(2);
+        expect(_instance.onSuccess).toBeCalled();
+        expect(_instance.onFail).not.toBeCalled();
+    });
+    test('没有结果', () => {
+        const action = jest.fn((cb) => {
+            cb({ data: 1000111 });
+        });
+        _wrapper.setProps({ action });
+        _instance.onClick();
+        _instance.onClick();
+        jest.advanceTimersByTime(20000);
+        expect(_instance.state.endRound).toBe(2);
+        expect(action).toBeCalled();
+        expect(_instance.onFail).toBeCalled();
+    });
+    test('reset', () => {
+        _instance.reset();
+        expect(_instance.state.run).toBeFalsy();
+    });
+    test('unMount', () => {
+        _wrapper.unmount();
+        expect(_unMount).toBeCalled();
+        expect(_instance.timer).toBe(null);
+    });
+    test('DefaultReactRouletteSlot data 为空数组[]', () => {
+        const wrapper = mount(
+            <DefaultReactRouletteSlot
+                action={(cb) => cb({ data: 1000111 })}
+                data={[]}
+            />
+        );
+        expect(wrapper).not.toContain(ReactRouletteSlot);
+        expect(_mount).toHaveBeenCalledTimes(1);
+    });
+    test('DefaultReactRouletteSlot data 为奇数个数数组', () => {
+        const wrapper = mount(
+            <DefaultReactRouletteSlot
+                action={(cb) => cb({ data: 1000111 })}
+                data={[
+                    {
+                        id: 1000,
+                        img: 'http://dummyimage.com/30x30',
+                        label: 'Larry',
+                    },
+                ]}
+            />
+        );
+        expect(wrapper).not.toContain(ReactRouletteSlot);
     });
 });
