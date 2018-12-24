@@ -11,7 +11,7 @@ describe('Util测试', () => {
     it('getLocalTime', async () => {
         const d = new Date();
         const offset = d.getTimezoneOffset() * 60000;
-        const result = +Utils.Date.getLocalTime(0);
+        const result = +Utils.Date.getLocalTime(8);
         const now = Utils.Date.getNowDate();
         expect(offset + now - result < 500).toBe(true);
     });
