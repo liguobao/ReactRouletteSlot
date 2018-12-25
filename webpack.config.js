@@ -1,22 +1,16 @@
+/*
+ * @Author: wzi
+ * @Date: 2018-12-25 18:28:49
+ * @Last Modified by: wzi
+ * @Last Modified time: 2018-12-25 18:31:15
+ */
 const path = require('path');
-const webpack = require('webpack');
-const HappyPack = require('happypack');
-const os = require('os');
 const tsImportPluginFactory = require('ts-import-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-    .BundleAnalyzerPlugin;
 const happyConfig = require('./config/happypack');
 const theme = require('./config/theme');
 const ROOT_PATH = path.resolve(__dirname);
 const NODE_PATH = path.join(ROOT_PATH, 'node_modules');
-
-const antdImportPlugin = tsImportPluginFactory({
-    libraryName: 'antd',
-    libraryDirectory: 'es',
-    style: true,
-});
 
 module.exports = {
     entry: './src',

@@ -5,13 +5,9 @@
  * @Last Modified time: 2018-09-10 16:21:47
  */
 
-const os = require('os');
 const path = require('path');
 const HappyPack = require('happypack');
-const tsImportPluginFactory = require('ts-import-plugin');
 var ROOT_PATH = path.join(__dirname, '../');
-const theme = require('./theme');
-const former = require('./webpack.ts-transformer');
 const ts = new HappyPack({
     id: 'ts',
     loaders: [
