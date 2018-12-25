@@ -49,10 +49,12 @@ type LuckyButtonProp = {
     y: number;
     disable: boolean;
 };
-export const LuckyButton = styled.td.attrs<LuckyButtonProp>({
-    colSpan: (props: LuckyButtonProp) => props.x,
-    rowSpan: (props: LuckyButtonProp) => props.y,
-})`
+export const LuckyButton = styled.td.attrs<LuckyButtonProp>(
+    (props: LuckyButtonProp) => ({
+        colSpan: props.x,
+        rowSpan: props.y,
+    })
+)`
     &:hover {
         cursor: pointer;
     }

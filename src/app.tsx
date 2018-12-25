@@ -8,11 +8,11 @@
 import * as React from 'react';
 
 import { MobileGlobalStyles, theme } from './global.style';
-import { injectGlobal, ThemeProvider } from '@common/helper/styled-component';
+import { createGlobalStyle, ThemeProvider } from '@common/helper/styled-component';
 import '@common/helper/Alert';
 import rouletteSlotData from './mock/RRS';
 import ReactRouletteSlot from '@components/ReactRouletteSlot';
-injectGlobal`${MobileGlobalStyles}`;
+createGlobalStyle`${MobileGlobalStyles}`;
 const DATA = rouletteSlotData.rouletteSlotData();
 const action = (cb) => {
     cb({ data: 1000 });

@@ -92,7 +92,7 @@ class DateHelper {
             hours = date.getHours(),
             year = date.getFullYear(),
             minutes = date.getMinutes();
-        console.log(date);
+
         return `${year}-${Utils.String.zeroFill(
             `${month}`
         )}-${Utils.String.zeroFill(`${d}`)} ${Utils.String.zeroFill(

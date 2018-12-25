@@ -25,10 +25,10 @@ interface ThemeInterface {
 const {
     default: styled,
     css,
-    injectGlobal,
+    createGlobalStyle,
     keyframes,
     ThemeProvider,
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeInterface>;
 
-export { css, injectGlobal, keyframes, ThemeProvider, ThemeInterface };
+export { css, createGlobalStyle, keyframes, ThemeProvider, ThemeInterface };
 export default styled;
