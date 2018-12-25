@@ -8,4 +8,6 @@ script:
   - yarn test
 after_script:
   - npminstall codecov && codecov
-# - CODECOV_TOKEN="b1f05410-7844-4681-88bf-d49132edc931"
+env:
+    global:
+    - CODECOV_TOKEN="b1f05410-7844-4681-88bf-d49132edc931"
