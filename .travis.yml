@@ -4,10 +4,11 @@ node_js:
   - '10'
 install:
   - yarn
+  - yarn global add codecov
 script:
   - yarn test
 after_script:
-  - npminstall codecov && codecov
+  - codecov
 env:
     global:
     - CODECOV_TOKEN="b1f05410-7844-4681-88bf-d49132edc931"
