@@ -79,17 +79,20 @@ class DateHelper {
         return DateHelper.formatDate(value).slice(0, 10);
     }
     /**
-     * 格式化日期
+     * 格式化日期, 固定为东八区的时间格式
      * @param value 时间戳
      */
     static formatDate(value: number) {
+        const timeZone = 8 * 60 * 60 * 1000;
         const targetValue = isNaN(value) ? null : value;
-        let date = new Date(targetValue),
+        const offset = new Date().getTimezoneOffset() * 60000;
+        let date = new Date(targetValue + timeZone + offset),
             month = date.getMonth() + 1,
             d = date.getDate(),
             hours = date.getHours(),
             year = date.getFullYear(),
             minutes = date.getMinutes();
+        console.log(date);
         return `${year}-${Utils.String.zeroFill(
             `${month}`
         )}-${Utils.String.zeroFill(`${d}`)} ${Utils.String.zeroFill(

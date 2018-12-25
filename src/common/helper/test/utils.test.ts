@@ -74,8 +74,7 @@ describe('Util测试', () => {
     });
 
     it('String.formatAmount', async () => {
-        const timestamp = +new Date(1520998978253);
-        const result = Utils.Date.formatDate(timestamp);
+        const result = Utils.Date.formatDate(1520998978253);
         expect(result).toContain('2018-03-14 11:42');
         // @ts-ignore
         const result1 = Utils.Date.formatDate(undefined);
