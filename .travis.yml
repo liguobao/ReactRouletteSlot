@@ -7,6 +7,8 @@ install:
   - yarn global add codecov
 script:
   - yarn test
+before_script:
+  - yarn install react react-dom
 after_script:
   - codecov
 env:
