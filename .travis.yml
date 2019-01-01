@@ -8,7 +8,7 @@ install:
 script:
   - yarn test
 before_script:
-  - yarn install react react-dom
+  - yarn add react react-dom
 after_script:
   - codecov
 env:
