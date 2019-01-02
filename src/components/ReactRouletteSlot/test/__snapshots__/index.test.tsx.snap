@@ -69,6 +69,9 @@ exports[`Loading 整体 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c13 {
@@ -5422,6 +5425,7 @@ exports[`Loading 整体 1`] = `
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
 ",
                                             ],
                                           },
@@ -5440,7 +5444,12 @@ exports[`Loading 整体 1`] = `
                                       <div
                                         className="c15"
                                       >
-                                        点击抽奖
+                                        <div>
+                                          点击
+                                        </div>
+                                        <div>
+                                          抽奖
+                                        </div>
                                       </div>
                                     </StyledComponent>
                                   </styled.div>

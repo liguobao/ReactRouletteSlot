@@ -124,27 +124,30 @@ module.exports = {
         ],
     },
     optimization: {
-        runtimeChunk: 'single',
+        runtimeChunk: isPro ? false : 'single',
     },
     plugins: [
         ...happyConfig,
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-        }),
+
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(isPro ? 'production': 'development'),
+            'process.env.NODE_ENV': JSON.stringify(
+                isPro ? 'production' : 'development'
+            ),
         }),
-    ],
+    ].concat(
+        isPro
+            ? []
+            : [
+                  new HtmlWebpackPlugin({
+                      template: './public/index.html',
+                  }),
+              ]
+    ),
+    externals: isPro ? { React: 'React', 'react-dom': 'react-dom' } : {},
     devServer: {
         host: '0.0.0.0',
         port: 9999,
         hot: true,
         historyApiFallback: true,
-        proxy: {
-            '/dev': {
-                target: 'http://192.168.0.116:8080/essmweb',
-                pathRewrite: { '^/dev': '' },
-            },
-        },
     },
 };
