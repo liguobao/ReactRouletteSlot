@@ -1,27 +1,17 @@
-/*
- * @Author: wzi
- * @Date: 2019-01-02 17:27:54
- * @Last Modified by: wzi
- * @Last Modified time: 2019-01-02 17:34:22
- */
-/*
- * @Author: wzi
- * @Date: 2019-01-02 17:27:42
- * @Last Modified by:   wzi
- * @Last Modified time: 2019-01-02 17:27:42
- */
 <h1 align="center">ReactRouletteSlot</h1>
 <center>基于React的轮盘抽奖程序</center>
+<div align="center">
 
 [![](https://travis-ci.org/wZi/ReactRouletteSlot.svg?branch=master)](https://travis-ci.org/wZi/ReactRouletteSlot) [![codecov](https://codecov.io/gh/wZi/ReactRouletteSlot/branch/master/graph/badge.svg)](https://codecov.io/gh/wZi/ReactRouletteSlot)
 [![Known Vulnerabilities](https://snyk.io/test/github/wZi/ReactRouletteSlot/badge.svg?targetFile=package.json)](https://snyk.io/test/github/wZi/ReactRouletteSlot?targetFile=package.json)
-[![DEPENDENCIES](https://david-dm.org/wzi/ReactRouletteSlot.svg)](https://david-dm.org/wzi/ReactRouletteSlot)
-[![DEPENDENCIES](https://david-dm.org/wzi/ReactRouletteSlot.svg)](https://david-dm.org/wzi/ReactRouletteSlot?type=dev)
+[![DEPENDENCIES](https://img.shields.io/david/wzi/ReactRouletteSlot.svg)](https://david-dm.org/wzi/ReactRouletteSlot)
+[![DEVDEPENDENCIES](https://img.shields.io/david/dev/wzi/ReactRouletteSlot.svg)](https://david-dm.org/wzi/ReactRouletteSlot?type=dev)
 [![npm package](https://img.shields.io/npm/v/react-roulette-slot.svg?style=flat-square)](https://www.npmjs.com/package/react-roulette-slot)
-[![NPM downloads](http://img.shields.io/npm/dm/react-roulette-slot.svg?style=flat-square)](https://www.npmjs.com/package/react-roulette-slot)
+[![npm download](https://img.shields.io/npm/dt/react-roulette-slot.svg)](https://www.npmjs.com/package/react-roulette-slot)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/wZi/ReactRouletteSlot.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wZi/ReactRouletteSlot/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wZi/ReactRouletteSlot.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wZi/ReactRouletteSlot/context:javascript)
-
+[![](https://img.shields.io/npm/l/react-roulette-slot.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com)](https://www.npmjs.com/package/react-roulette-slot)
+</div>
 <center><img  width="250" src="https://raw.githubusercontent.com/wZi/wZi/gh-pages/images/demo.png" /></center>
 
 ---
@@ -68,6 +58,7 @@ const App = () => {
         action={action}
         size={300}
     />
+}
 ```
 
 ## ⌨️ 本地开发
