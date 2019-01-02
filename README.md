@@ -15,6 +15,7 @@
 </div>
 <center><img  width="250" src="https://raw.githubusercontent.com/wZi/wZi/gh-pages/images/demo.png" /></center>
 <div align="center">基于React的轮盘抽奖程序</div>
+
 ---
 
 ## 项目介绍
