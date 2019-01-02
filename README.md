@@ -1,5 +1,4 @@
 <h1 align="center">ReactRouletteSlot</h1>
-<center>基于React的轮盘抽奖程序</center>
 <div align="center">
 
 [![](https://travis-ci.org/wZi/ReactRouletteSlot.svg?branch=master)](https://travis-ci.org/wZi/ReactRouletteSlot) [![codecov](https://codecov.io/gh/wZi/ReactRouletteSlot/branch/master/graph/badge.svg)](https://codecov.io/gh/wZi/ReactRouletteSlot)
@@ -12,9 +11,10 @@
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wZi/ReactRouletteSlot.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wZi/ReactRouletteSlot/context:javascript)
 [![size](https://img.badgesize.io/wZi/ReactRouletteSlot/master/dist/ReactRouletteSlot.min.js.svg?compression=gzip)](https://www.npmjs.com/package/react-roulette-slot)
 [![](https://img.shields.io/npm/l/react-roulette-slot.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com)](https://www.npmjs.com/package/react-roulette-slot)
+
 </div>
 <center><img  width="250" src="https://raw.githubusercontent.com/wZi/wZi/gh-pages/images/demo.png" /></center>
-
+<div align="center">基于React的轮盘抽奖程序</div>
 ---
 
 ## 项目介绍
