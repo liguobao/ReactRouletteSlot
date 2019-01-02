@@ -6,20 +6,38 @@
  */
 const path = require('path');
 const tsImportPluginFactory = require('ts-import-plugin');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const happyConfig = require('./config/happypack');
 const theme = require('./config/theme');
 const ROOT_PATH = path.resolve(__dirname);
 const NODE_PATH = path.join(ROOT_PATH, 'node_modules');
 
+const isPro = process.env.NODE_ENV === 'production';
+const getDevEntry = () =>
+    isPro ? './src/components/ReactRouletteSlot' : './src';
+
+const getOutput = () => {
+    return Object.assign(
+        {
+            path: path.join(ROOT_PATH, './dist'),
+        },
+        isPro
+            ? {
+                  filename: 'ReactRouletteSlot.min.js',
+                  libraryTarget: 'umd',
+                  library: 'ReactRouletteSlot',
+              }
+            : {
+                  filename: '[name].js',
+                  chunkFilename: '[name].[chunkhash].js',
+                  libraryTarget: 'var',
+              }
+    );
+};
 module.exports = {
-    entry: './src',
-    output: {
-        path: path.join(ROOT_PATH, './dist'),
-        filename: '[name].js',
-        chunkFilename: '[name].[chunkhash].js',
-        libraryTarget: 'var',
-    },
+    entry: getDevEntry(),
+    output: getOutput(),
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
         alias: {
@@ -113,6 +131,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html',
         }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(isPro ? 'production': 'development'),
+        }),
     ],
     devServer: {
         host: '0.0.0.0',
@@ -122,8 +143,8 @@ module.exports = {
         proxy: {
             '/dev': {
                 target: 'http://192.168.0.116:8080/essmweb',
-                pathRewrite: { '^/dev': '' }
-            }
+                pathRewrite: { '^/dev': '' },
+            },
         },
     },
 };
