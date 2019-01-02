@@ -93,7 +93,6 @@ const GlobalStyle = css`
         }
     }
 
-   
     @keyframes slide-right {
         0% {
             transform: translateX(-10px);

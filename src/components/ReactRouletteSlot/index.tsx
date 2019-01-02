@@ -28,15 +28,14 @@ type DataItem = {
     // 实际上数据的顺序
     position?: number;
 };
+type ActionType = (
+    cb: ({ data, isWin }: { data: number | string; isWin?: boolean }) => void
+) => void;
 type ReactRouletteSlotProps = {
     data: ReactRouletteSlot.RouletteSlotData;
     // 每行个数
     row?: number;
-    action: (
-        cb: (
-            { data, isWin }: { data: number | string; isWin?: boolean }
-        ) => void
-    ) => void;
+    action: ActionType;
     // 宽跟高
     size?: number;
 };
@@ -51,7 +50,7 @@ type ReactRouletteSlotState = {
     // 记录结束时转了几圈
     endRound: number;
     // 记录目标
-    target: number;
+    target: number | string;
     // 是否在运行中
     run: boolean;
     // 抽奖按钮的坐标
@@ -112,7 +111,7 @@ export class ReactRouletteSlot extends React.Component<
     // 获得几列
     getRow = (data: any[]) => (this.props.row || data.length < 9 ? 3 : 4);
     // 获得几行
-    getCol = (row) => (this.props.data.length - 2 * row) / 2 + 2;
+    getCol = (row: number) => (this.props.data.length - 2 * row) / 2 + 2;
     // 获得按钮的坐标数据
     getLuckyButtonPosition = (
         data: ReactRouletteSlot.RouletteSlotData,
@@ -201,7 +200,7 @@ export class ReactRouletteSlot extends React.Component<
         this.getLuckyButtonPosition(initData, row);
     };
     // 请求开奖结果的回调
-    onResultReturn = ({ data }: { data: number }) => {
+    onResultReturn = ({ data }: { data: number | string }) => {
         this.setState({
             target: data,
         });
@@ -297,7 +296,10 @@ export class ReactRouletteSlot extends React.Component<
             onClick={this.onClick}
             disable={this.state.run}
         >
-            <LuckyLabel>点击抽奖</LuckyLabel>
+            <LuckyLabel>
+                <div>点击</div>
+                <div>抽奖</div>
+            </LuckyLabel>
         </LuckyButton>
     );
 

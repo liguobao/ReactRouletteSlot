@@ -58,7 +58,7 @@ export const LuckyButton = styled.td.attrs<LuckyButtonProp>(
     &:hover {
         cursor: pointer;
     }
-    opacity: ${(props: LuckyButtonProp) => (props.disable ? 0.6 : 1)};
+    opacity: ${(props: LuckyButtonProp) => (props.disable ? 0.8 : 1)};
 
     padding: 2px;
 `;
@@ -71,6 +71,7 @@ export const LuckyLabel = styled.div`
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
 `;
 export const Img = styled.img`
     margin-top: 20%;
