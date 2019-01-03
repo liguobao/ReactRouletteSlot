@@ -2,10 +2,10 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:47:26
  * @Last Modified by: wzi
- * @Last Modified time: 2019-01-03 11:54:01
+ * @Last Modified time: 2019-01-03 14:19:00
  */
 
-declare interface RouletteSlotDataItem {
+export interface RouletteSlotDataItem {
     // 名称
     label: string | JSX.Element;
     // 图片
@@ -13,9 +13,9 @@ declare interface RouletteSlotDataItem {
     // 商品 ID
     id: number;
 }
-declare type RouletteSlotData = RouletteSlotDataItem[];
+export type RouletteSlotData = RouletteSlotDataItem[];
 
-declare type ReactRouletteSlotProps = {
+export type ReactRouletteSlotProps = {
     data: RouletteSlotData;
     // 每行个数
     row?: number;
@@ -23,13 +23,13 @@ declare type ReactRouletteSlotProps = {
     // 宽跟高
     size?: number;
 };
-declare type DataItem = {
+export type DataItem = {
     type: 'item' | 'button';
     data?: RouletteSlotDataItem;
     // 实际上数据的顺序
     position?: number;
 };
-declare type ActionType = (
+export type ActionType = (
     cb: ({ data, isWin }: { data: number | string; isWin?: boolean }) => void
 ) => void;
 
@@ -57,7 +57,7 @@ type ReactRouletteSlotState = {
     // 行
     col: number;
 };
-declare class ReactRouletteSlot extends React.Component<
+export class ReactRouletteSlot extends React.Component<
     ReactRouletteSlotProps,
     ReactRouletteSlotState
 > {}
