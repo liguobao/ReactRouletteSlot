@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:23:08
  * @Last Modified by: wzi
- * @Last Modified time: 2018-12-05 16:06:22
+ * @Last Modified time: 2019-01-03 11:31:24
  */
 /// <reference path='index.d.ts' />
 import React from 'react';
@@ -22,47 +22,7 @@ import emptyEnhancer from '@common/HOC/Empty';
 import errorBoundaryEnhancer from '@common/HOC/ErrorBoundary';
 import Border from './Border';
 const MIN_ROUND = 2;
-type DataItem = {
-    type: 'item' | 'button';
-    data?: ReactRouletteSlot.RouletteSlotDataItem;
-    // 实际上数据的顺序
-    position?: number;
-};
-type ActionType = (
-    cb: ({ data, isWin }: { data: number | string; isWin?: boolean }) => void
-) => void;
-type ReactRouletteSlotProps = {
-    data: ReactRouletteSlot.RouletteSlotData;
-    // 每行个数
-    row?: number;
-    action: ActionType;
-    // 宽跟高
-    size?: number;
-};
-type ReactRouletteSlotState = {
-    // 处理过后的数据
-    board: DataItem[][];
-    boardData: DataItem[];
-    // 记录当前的active 位置
-    pointer: number;
-    // 记录转了几圈
-    round: number;
-    // 记录结束时转了几圈
-    endRound: number;
-    // 记录目标
-    target: number | string;
-    // 是否在运行中
-    run: boolean;
-    // 抽奖按钮的坐标
-    luckyButtonPosition: {
-        x: number;
-        y: number;
-    };
-    // 列
-    row: number;
-    // 行
-    col: number;
-};
+
 @shouldUpdate({
     props: ['data', 'action'],
     state: ['pointer', 'run'],
@@ -113,10 +73,7 @@ export class ReactRouletteSlot extends React.Component<
     // 获得几行
     getCol = (row: number) => (this.props.data.length - 2 * row) / 2 + 2;
     // 获得按钮的坐标数据
-    getLuckyButtonPosition = (
-        data: ReactRouletteSlot.RouletteSlotData,
-        row: number
-    ) => {
+    getLuckyButtonPosition = (data: RouletteSlotData, row: number) => {
         const x = row - 2;
         const y = (data.length - row * 2) / 2;
         this.setState({
@@ -131,7 +88,7 @@ export class ReactRouletteSlot extends React.Component<
         row: number,
         col: number,
         length: number,
-        initData: ReactRouletteSlot.RouletteSlotData
+        initData: RouletteSlotData
     ): [DataItem[][], DataItem[]] => {
         const board = [];
         const boardData = [];
@@ -309,7 +266,7 @@ export class ReactRouletteSlot extends React.Component<
         position,
     }: {
         position: number;
-        data: ReactRouletteSlot.RouletteSlotDataItem;
+        data: RouletteSlotDataItem;
     }) => (
         <Item>
             <Content active={this.isActive(position)}>
@@ -355,7 +312,7 @@ export class ReactRouletteSlot extends React.Component<
 }
 export default compose(
     emptyEnhancer(
-        ({ data }: { data: ReactRouletteSlot.RouletteSlotData }) =>
+        ({ data }: { data: RouletteSlotData }) =>
             !data || data.length === 0 || data.length % 2 !== 0,
         () => {
             window.Alert && window.Alert.fail('数据不符合要求');

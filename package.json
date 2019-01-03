@@ -100,6 +100,7 @@
         "Roulette",
         "TypeScript"
     ],
+    "typings": "./src/components/ReactRouletteSlot/index.d.ts",
     "author": "wZi",
     "config": {
         "commitizen": {

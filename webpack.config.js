@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-12-25 18:28:49
  * @Last Modified by: wzi
- * @Last Modified time: 2018-12-25 18:31:15
+ * @Last Modified time: 2019-01-03 11:11:35
  */
 const path = require('path');
 const tsImportPluginFactory = require('ts-import-plugin');
@@ -20,11 +20,11 @@ const getDevEntry = () =>
 const getOutput = () => {
     return Object.assign(
         {
-            path: path.join(ROOT_PATH, './dist'),
+            path: path.join(ROOT_PATH, './lib'),
         },
         isPro
             ? {
-                  filename: 'ReactRouletteSlot.min.js',
+                  filename: 'index.js',
                   libraryTarget: 'umd',
                   library: 'ReactRouletteSlot',
               }

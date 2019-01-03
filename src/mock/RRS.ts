@@ -7,7 +7,7 @@
 //  */
 import Mock from 'mockjs';
 interface ReactRouletteSlotRespond {
-    list: ReactRouletteSlot.RouletteSlotData;
+    list: RouletteSlotData;
 }
 const rouletteSlotData = (): ReactRouletteSlotRespond =>
     Mock.mock({

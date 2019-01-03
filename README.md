@@ -131,3 +131,6 @@ type ActionType = (
     cb: ({ data, isWin }: { data: number | string; isWin?: boolean }) => void
 ) => void;
 ```
+
+## 💬 其他
+功能还不完善,有任何意见和建议,欢迎提[issue](https://github.com/wZi/ReactRouletteSlot/issues)
