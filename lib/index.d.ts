@@ -2,9 +2,9 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:47:26
  * @Last Modified by: wzi
- * @Last Modified time: 2019-01-03 14:19:00
+ * @Last Modified time: 2019-01-03 14:34:19
  */
-
+import * as React from 'react';
 export interface RouletteSlotDataItem {
     // 名称
     label: string | JSX.Element;
@@ -57,7 +57,7 @@ type ReactRouletteSlotState = {
     // 行
     col: number;
 };
-export class ReactRouletteSlot extends React.Component<
+export default class ReactRouletteSlot extends React.Component<
     ReactRouletteSlotProps,
     ReactRouletteSlotState
 > {}
