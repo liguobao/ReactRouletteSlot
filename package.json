@@ -2,7 +2,7 @@
     "name": "react-roulette-slot",
     "version": "0.1.5",
     "description": "ReactRouletteSlot 基于React的轮盘抽奖器",
-    "main": "./dist/ReactRouletteSlot.min.js",
+    "main": "./lib/index.js",
     "license": "MIT",
     "scripts": {
         "clean": "rm -rf dist/*.**.*s coverage/*",
