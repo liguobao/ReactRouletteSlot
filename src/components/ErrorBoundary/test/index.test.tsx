@@ -7,7 +7,6 @@
 import ErrorBoundary from '@components/ErrorBoundary';
 import { shallow } from 'enzyme';
 import * as React from 'react';
-// import renderer from 'react-test-renderer';
 export default class Greeter extends React.Component {
     constructor(props) {
         super(props);

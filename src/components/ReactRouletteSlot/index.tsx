@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:23:08
  * @Last Modified by: wzi
- * @Last Modified time: 2019-01-07 17:03:05
+ * @Last Modified time: 2019-01-07 17:50:21
  */
 /// <reference path='index.d.ts' />
 import React from 'react';
@@ -219,6 +219,9 @@ export class ReactRouletteSlot extends React.Component<
     };
     runBeforeEnd = (pointer: number, time: number) => {
         const target = this.findTargetPointer(this.state.target);
+        if (!target) {
+            return this.onFail();
+        }
         if (this.state.endRound < 2) {
             if (pointer === target.position) {
                 this.setState({ endRound: this.state.endRound + 1 });
@@ -226,9 +229,6 @@ export class ReactRouletteSlot extends React.Component<
             return this.run(this.getTime(time));
         }
 
-        if (!target) {
-            return this.onFail();
-        }
         if (target.position === pointer) {
             return this.onSuccess(target);
         }

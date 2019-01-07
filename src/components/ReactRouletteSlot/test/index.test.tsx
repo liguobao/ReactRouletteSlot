@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-01-31 16:40:02
  * @Last Modified by: wzi
- * @Last Modified time: 2018-04-27 15:32:26
+ * @Last Modified time: 2019-01-07 17:52:49
  */
 import React from 'react';
 import { ReactRouletteSlot } from '@components/ReactRouletteSlot';
@@ -70,7 +70,7 @@ describe('Loading', () => {
         _instance.onClick();
         _instance.onClick();
         jest.advanceTimersByTime(20000);
-        expect(_instance.state.endRound).toBe(2);
+        expect(_instance.state.endRound).toBe(0);
         expect(action).toBeCalled();
         expect(_instance.onFail).toBeCalled();
     });
