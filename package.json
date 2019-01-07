@@ -1,6 +1,6 @@
 {
     "name": "react-roulette-slot",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "description": "ReactRouletteSlot 基于React的轮盘抽奖器",
     "main": "./lib/index.js",
     "typings": "./lib/index.d.ts",

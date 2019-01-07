@@ -9,7 +9,7 @@
 [![npm download](https://img.shields.io/npm/dt/react-roulette-slot.svg)](https://www.npmjs.com/package/react-roulette-slot)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/wZi/ReactRouletteSlot.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wZi/ReactRouletteSlot/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wZi/ReactRouletteSlot.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wZi/ReactRouletteSlot/context:javascript)
-[![size](https://img.badgesize.io/wZi/ReactRouletteSlot/master/dist/ReactRouletteSlot.min.js.svg?compression=gzip)](https://www.npmjs.com/package/react-roulette-slot)
+[![size](https://img.badgesize.io/wZi/ReactRouletteSlot/master/lib/index.js.svg?compression=gzip)](https://www.npmjs.com/package/react-roulette-slot)
 [![](https://img.shields.io/npm/l/react-roulette-slot.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com)](https://www.npmjs.com/package/react-roulette-slot)
 
 </div>
