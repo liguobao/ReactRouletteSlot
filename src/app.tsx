@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-09-04 10:55:33
  * @Last Modified by: wzi
- * @Last Modified time: 2018-12-05 16:05:15
+ * @Last Modified time: 2019-01-07 17:30:30
  */
 
 import * as React from 'react';
@@ -15,7 +15,7 @@ import ReactRouletteSlot from '@components/ReactRouletteSlot';
 createGlobalStyle`${MobileGlobalStyles}`;
 const DATA = rouletteSlotData.rouletteSlotData();
 const action = (cb) => {
-    cb({ data: 1000 });
+    cb({ data: 1010 });
 };
 const App = () => {
     return (

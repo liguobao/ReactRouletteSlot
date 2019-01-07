@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:23:08
  * @Last Modified by: wzi
- * @Last Modified time: 2019-01-03 11:31:24
+ * @Last Modified time: 2019-01-07 17:03:05
  */
 /// <reference path='index.d.ts' />
 import React from 'react';
@@ -61,7 +61,7 @@ export class ReactRouletteSlot extends React.Component<
     getBoardData = () => this.state.boardData;
 
     // 寻找目标节点
-    findTargetPointer = (target: number) =>
+    findTargetPointer = (target: number): DataItem =>
         this.getBoardData().find((cur) => {
             if (cur.type === 'button') {
                 return false;
@@ -218,14 +218,14 @@ export class ReactRouletteSlot extends React.Component<
         return clearInterval(this.timer);
     };
     runBeforeEnd = (pointer: number, time: number) => {
+        const target = this.findTargetPointer(this.state.target);
         if (this.state.endRound < 2) {
-            if (pointer === 0) {
+            if (pointer === target.position) {
                 this.setState({ endRound: this.state.endRound + 1 });
             }
             return this.run(this.getTime(time));
         }
 
-        const target = this.findTargetPointer(this.state.target);
         if (!target) {
             return this.onFail();
         }
