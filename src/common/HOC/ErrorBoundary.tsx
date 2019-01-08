@@ -2,10 +2,9 @@
  * @Author: wzi
  * @Date: 2018-03-02 10:04:09
  * @Last Modified by: wzi
- * @Last Modified time: 2018-12-05 16:49:02
+ * @Last Modified time: 2019-01-08 16:44:56
  */
 
-import { Alert } from 'antd';
 import React, { SFC } from 'react';
 import { lifecycle, branch, renderComponent } from 'recompose';
 import { compose } from '@common/helper/compose';
@@ -16,13 +15,10 @@ type ErrorBoundaryProp = {
 };
 const ErrorBoundary: SFC<ErrorBoundaryProp> = ({ error, description }) => {
     return (
-        <Alert
-            style={{ margin: 20, overflow: 'hidden' }}
-            showIcon
-            type="error"
-            message="🤣 出错了"
-            description={description || error.message || error.toString()}
-        />
+        <div style={{ margin: 20, overflow: 'hidden' }}>
+            <div>🤣 出错了</div>
+            <div>{description || error.message || error.toString()}</div>
+        </div>
     );
 };
 

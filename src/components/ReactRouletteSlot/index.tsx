@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:23:08
  * @Last Modified by: wzi
- * @Last Modified time: 2019-01-07 17:50:21
+ * @Last Modified time: 2019-01-08 16:41:42
  */
 /// <reference path='index.d.ts' />
 import React from 'react';
@@ -21,6 +21,7 @@ import { compose } from '@common/helper/compose';
 import emptyEnhancer from '@common/HOC/Empty';
 import errorBoundaryEnhancer from '@common/HOC/ErrorBoundary';
 import Border from './Border';
+import Alert from '@components/Alert';
 const MIN_ROUND = 2;
 
 @shouldUpdate({
@@ -187,11 +188,11 @@ export class ReactRouletteSlot extends React.Component<
         }
     };
     onSuccess = (target: DataItem) => {
-        window.Alert.success(`恭喜您获得${target.data.label}`);
+        Alert.show({ content: `恭喜您获得${target.data.label}` });
         return this.reset();
     };
     onFail = () => {
-        window.Alert.success('请稍后重试');
+        Alert.show({ content: '请稍后重试' });
         return this.reset();
     };
     getTime = (time: number, interval: number = -50) => {
@@ -323,7 +324,7 @@ export default compose(
         ({ data }: { data: RouletteSlotData }) =>
             !data || data.length === 0 || data.length % 2 !== 0,
         () => {
-            window.Alert && window.Alert.fail('数据不符合要求');
+            Alert.show({ content: '数据不符合要求' });
             return null;
         }
     ),

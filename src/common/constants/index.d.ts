@@ -4,6 +4,4 @@
  * @Last Modified by: wzi
  * @Last Modified time: 2018-12-05 15:55:09
  */
-declare namespace Constants {
-    type ConstantsProp = any;
-}
+declare type Constants = {};

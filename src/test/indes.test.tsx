@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import ReactRouletteSlot from '@components/ReactRouletteSlot';
-import APP, { DATA, action } from '../app';
+import APP, { data, action } from '../app';
 import { mount } from 'enzyme';
 import '../index';
 describe('APP', () => {
@@ -15,7 +15,7 @@ describe('APP', () => {
         console.log(
             wrapper.contains(
                 <ReactRouletteSlot
-                    data={DATA.list}
+                    data={data}
                     action={action}
                     width={300}
                     height={300}
@@ -25,7 +25,7 @@ describe('APP', () => {
         expect(
             wrapper.contains(
                 <ReactRouletteSlot
-                    data={DATA.list}
+                    data={data}
                     action={action}
                     width={300}
                     height={300}

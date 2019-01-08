@@ -17,12 +17,9 @@
         "update": "yarn upgrade-interactive -lastest"
     },
     "dependencies": {
-        "antd": "3.11.6",
-        "antd-mobile": "2.2.6",
         "babel-polyfill": "^6.26.0",
-        "history": "^4.7.2",
-        "react-loadable": "^5.4.0",
-        "react-loading": "^2.0.3",
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0",
         "recompose": "^0.30.0",
         "styled-components": "^4.1.3"
     },

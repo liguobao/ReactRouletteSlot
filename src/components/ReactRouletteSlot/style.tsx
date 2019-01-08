@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:23:08
  * @Last Modified by: wzi
- * @Last Modified time: 2018-11-30 11:25:07
+ * @Last Modified time: 2019-01-08 16:49:18
  */
 
 import styled from '@common/helper/styled-component';
@@ -19,15 +19,14 @@ export const Wrapper = styled.table`
     position: absolute;
     top: 20px;
     left: 20px;
+    border-spacing: 0px;
 `;
 export const Line = styled.tr``;
 type ItemProp = {
     active: boolean;
     height: number;
 };
-export const Item = styled.td`
-    padding: 2px;
-`;
+export const Item = styled.td``;
 export const ContentItem = styled.span`
     flex: 1;
     &:first-child {
