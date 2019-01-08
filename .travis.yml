@@ -11,24 +11,24 @@ stages:
     - test
     - name: deploy
 jobs:
-    include:
-        - stage: test
-          script:
-          - yarn lint
-          - yarn test 
+  include:
+    - stage: test
+      script:
+      - yarn lint
+      - yarn test 
 
-          after_script:
-            - codecov
-        - stage: deploy
-          script:
-            - yarn build
-          deploy:
-            provider: npm
-            email: wzi.weng@gmail.com
-            api_key: "$NPM_TOKEN"
-            skip_cleanup: true
-            on:
-              all_branches: true
+      after_script:
+        - codecov
+    - stage: deploy
+      script:
+        - yarn build
+      deploy:
+        provider: npm
+        email: wzi.weng@gmail.com
+        api_key: "$NPM_TOKEN"
+        skip_cleanup: true
+        on:
+          branch: master
 env:
     global:
         - CODECOV_TOKEN="b1f05410-7844-4681-88bf-d49132edc931"
