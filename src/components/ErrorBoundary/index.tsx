@@ -1,4 +1,3 @@
-import { Alert } from 'antd';
 import * as React from 'react';
 
 interface IErrorBoundaryProps {
@@ -32,15 +31,12 @@ export default class ErrorBoundary extends React.Component<
         const { error } = this.state;
         const { description } = this.props;
         return (
-            <Alert
-                style={{ margin: 20 }}
-                showIcon
-                type="error"
-                message="🤣 出错了"
-                description={description || error.message || error.toString()}
-            />
+            <div style={{ margin: 20 }}>
+                <div>🤣 出错了</div>
+                <div>{description || error.message || error.toString()}</div>
+            </div>
         );
-    }
+    };
 
     render() {
         if (this.state.errorInfo) {

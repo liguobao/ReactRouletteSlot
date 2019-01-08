@@ -2,12 +2,12 @@
  * @Author: wzi
  * @Date: 2018-01-31 16:40:02
  * @Last Modified by: wzi
- * @Last Modified time: 2019-01-07 17:52:49
+ * @Last Modified time: 2019-01-08 16:53:04
  */
 import React from 'react';
 import { ReactRouletteSlot } from '@components/ReactRouletteSlot';
 import DefaultReactRouletteSlot from '@components/ReactRouletteSlot';
-import '@common/helper/Alert';
+
 import { mount } from 'enzyme';
 import 'jest-styled-components';
 import toJson from 'enzyme-to-json';

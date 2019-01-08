@@ -2,7 +2,7 @@
  * @Author: wzi
  * @Date: 2019-01-08 15:41:43
  * @Last Modified by: wzi
- * @Last Modified time: 2019-01-08 16:41:13
+ * @Last Modified time: 2019-01-08 17:00:14
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -55,7 +55,7 @@ export default class Alert {
         ReactDOM.render(<Alerts {...props} />, container);
 
         setTimeout(() => {
-            container.innerHTML = '';
+            ReactDOM.unmountComponentAtNode(container);
         }, (props.duration || 2) * 1000);
     }
 }
