@@ -39,7 +39,14 @@ describe('Loading', () => {
             cb({ data: 1011 });
         };
 
-        _wrapper = mount(<ReactRouletteSlot data={data} action={action} />);
+        _wrapper = mount(
+            <ReactRouletteSlot
+                data={data}
+                action={action}
+                width={300}
+                height={300}
+            />
+        );
         _instance = _wrapper.instance();
         jest.spyOn(_instance, 'onFetch');
         jest.spyOn(_instance, 'onResultReturn');
@@ -87,6 +94,8 @@ describe('Loading', () => {
         const wrapper = mount(
             <DefaultReactRouletteSlot
                 action={(cb) => cb({ data: 1000111 })}
+                width={300}
+                height={300}
                 data={[]}
             />
         );
@@ -97,6 +106,8 @@ describe('Loading', () => {
         const wrapper = mount(
             <DefaultReactRouletteSlot
                 action={(cb) => cb({ data: 1000111 })}
+                width={300}
+                height={300}
                 data={[
                     {
                         id: 1000,

@@ -16,7 +16,8 @@ enum BallPositionType {
 }
 type BoardProps = {
     children: JSX.Element;
-    size?: number;
+    width: number;
+    height: number;
     row: number;
     col: number;
     isRun: boolean;
@@ -26,13 +27,15 @@ type BoardState = {};
     props: ['children', 'row', 'col', 'isRun'],
 })
 export default class Board extends React.Component<BoardProps, BoardState> {
-    getTotalSize = () => this.props.size + 20 * 2;
+    getHorizontalSize = () => this.props.width + 20 * 2;
+    getVerticalSize = () => this.props.height + 20 * 2;
     getTop = (index: number, type: BallPositionType) => {
         switch (type) {
             case BallPositionType.left:
             case BallPositionType.right:
                 return (
-                    ((this.getTotalSize() - 20) / this.props.col / 2) * index +
+                    ((this.getVerticalSize() - 20) / this.props.col / 2) *
+                        index +
                     5
                 );
             case BallPositionType.top:
@@ -46,7 +49,8 @@ export default class Board extends React.Component<BoardProps, BoardState> {
             case BallPositionType.bottom:
             case BallPositionType.top:
                 return (
-                    ((this.getTotalSize() - 20) / this.props.row / 2) * index +
+                    ((this.getHorizontalSize() - 20) / this.props.row / 2) *
+                        index +
                     5
                 );
             case BallPositionType.left:
@@ -97,7 +101,7 @@ export default class Board extends React.Component<BoardProps, BoardState> {
     render() {
         return (
             <React.Fragment>
-                <Border size={this.props.size}>
+                <Border height={this.props.height} width={this.props.width}>
                     <this.Balls />
                     {this.props.children}
                 </Border>

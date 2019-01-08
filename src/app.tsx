@@ -8,7 +8,10 @@
 import * as React from 'react';
 
 import { MobileGlobalStyles, theme } from './global.style';
-import { createGlobalStyle, ThemeProvider } from '@common/helper/styled-component';
+import {
+    createGlobalStyle,
+    ThemeProvider,
+} from '@common/helper/styled-component';
 import '@common/helper/Alert';
 import rouletteSlotData from './mock/RRS';
 import ReactRouletteSlot from '@components/ReactRouletteSlot';
@@ -28,7 +31,8 @@ const App = () => {
                 <ReactRouletteSlot
                     data={DATA.list}
                     action={action}
-                    size={300}
+                    width={300}
+                    height={300}
                 />
             </div>
         </ThemeProvider>

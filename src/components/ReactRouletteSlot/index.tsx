@@ -45,6 +45,7 @@ export class ReactRouletteSlot extends React.Component<
         run: false,
         row: null,
         col: null,
+        itemHeight: 0,
     };
     timer = null;
     componentWillMount() {
@@ -72,6 +73,8 @@ export class ReactRouletteSlot extends React.Component<
     getRow = (data: any[]) => (this.props.row || data.length < 9 ? 3 : 4);
     // 获得几行
     getCol = (row: number) => (this.props.data.length - 2 * row) / 2 + 2;
+    // 获得单元高度
+    getItemHeight = (col: number) => this.props.height / col - (col - 2) * 1;
     // 获得按钮的坐标数据
     getLuckyButtonPosition = (data: RouletteSlotData, row: number) => {
         const x = row - 2;
@@ -152,6 +155,7 @@ export class ReactRouletteSlot extends React.Component<
             row,
             col,
             boardData,
+            itemHeight: this.getItemHeight(col),
         });
 
         this.getLuckyButtonPosition(initData, row);
@@ -269,7 +273,10 @@ export class ReactRouletteSlot extends React.Component<
         data: RouletteSlotDataItem;
     }) => (
         <Item>
-            <Content active={this.isActive(position)}>
+            <Content
+                active={this.isActive(position)}
+                height={this.state.itemHeight}
+            >
                 <ContentItem>
                     <Img src={data.img} />
                 </ContentItem>
@@ -292,7 +299,7 @@ export class ReactRouletteSlot extends React.Component<
     );
     // 棋盘
     Board = () => (
-        <Wrapper size={this.props.size}>
+        <Wrapper width={this.props.width} height={this.props.height}>
             <tbody>{this.state.board.map(this.Line)}</tbody>
         </Wrapper>
     );
@@ -300,7 +307,8 @@ export class ReactRouletteSlot extends React.Component<
     render() {
         return (
             <Border
-                size={this.props.size}
+                width={this.props.width}
+                height={this.props.height}
                 row={this.state.row}
                 col={this.state.col}
                 isRun={this.state.run}

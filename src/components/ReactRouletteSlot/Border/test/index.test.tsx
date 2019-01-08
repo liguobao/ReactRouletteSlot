@@ -19,7 +19,7 @@ class Child extends React.Component {
 describe('Border', () => {
     test('整体', () => {
         const wrapper = mount(
-            <Border row={4} col={4} isRun={false}>
+            <Border row={4} col={4} isRun={false} width={300} height={300}>
                 <Child />
             </Border>
         );
@@ -29,7 +29,7 @@ describe('Border', () => {
     });
     test('size 为3', () => {
         const wrapper = mount(
-            <Border row={3} col={3} isRun={false}>
+            <Border row={3} col={3} isRun={false} width={300} height={300}>
                 <Child />
             </Border>
         );
@@ -38,7 +38,7 @@ describe('Border', () => {
     });
     test('running', () => {
         const wrapper = mount(
-            <Border row={3} col={3} isRun={true}>
+            <Border row={3} col={3} isRun={true} width={300} height={300}>
                 <Child />
             </Border>
         );

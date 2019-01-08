@@ -21,7 +21,8 @@ declare type ReactRouletteSlotProps = {
     row?: number;
     action: ActionType;
     // 宽跟高
-    size?: number;
+    width: number;
+    height: number;
 };
 declare type DataItem = {
     type: 'item' | 'button';
@@ -56,6 +57,8 @@ type ReactRouletteSlotState = {
     row: number;
     // 行
     col: number;
+    // 单元高度
+    itemHeight: number;
 };
 declare class ReactRouletteSlot extends React.Component<
     ReactRouletteSlotProps,

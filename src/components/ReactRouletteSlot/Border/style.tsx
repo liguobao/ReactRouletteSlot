@@ -45,16 +45,17 @@ const animation = css`
     }
 `;
 type Props = {
-    size?: number;
+    height: number;
+    width: number;
 };
 export const Border = styled.div`
     border-radius: 10px;
     border-collapse: separate;
     position: relative;
     width: ${(props: Props) =>
-        props.size ? props.size + 40 + 'px' : 'calc(100% + 40px)'};
+        props.width ? props.width + 40 + 'px' : 'calc(100% + 40px)'};
     height: ${(props: Props) =>
-        props.size ? props.size + 40 + 'px' : 'calc(100% + 40px)'};
+        props.height ? props.height + 40 + 'px' : 'calc(100% + 40px)'};
     margin: 0 auto;
     background: #fc5a38;
 `;

@@ -17,7 +17,8 @@ describe('APP', () => {
                 <ReactRouletteSlot
                     data={DATA.list}
                     action={action}
-                    size={300}
+                    width={300}
+                    height={300}
                 />
             )
         );
@@ -26,7 +27,8 @@ describe('APP', () => {
                 <ReactRouletteSlot
                     data={DATA.list}
                     action={action}
-                    size={300}
+                    width={300}
+                    height={300}
                 />
             )
         ).toBeTruthy();

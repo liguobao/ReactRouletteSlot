@@ -7,13 +7,12 @@
 
 import styled from '@common/helper/styled-component';
 type WrapperProps = {
-    size?: number;
+    width: number;
+    height: number;
 };
 export const Wrapper = styled.table`
-    width: ${(props: WrapperProps) =>
-        props.size ? props.size + 'px' : '100%'};
-    height: ${(props: WrapperProps) =>
-        props.size ? props.size + 'px' : '100%'};
+    width: ${(props: WrapperProps) => props.width}px;
+    height: ${(props: WrapperProps) => props.height}px;
     text-align: center;
     table-layout: fixed;
     background: #ae184e;
@@ -24,6 +23,7 @@ export const Wrapper = styled.table`
 export const Line = styled.tr``;
 type ItemProp = {
     active: boolean;
+    height: number;
 };
 export const Item = styled.td`
     padding: 2px;
@@ -33,11 +33,12 @@ export const ContentItem = styled.span`
     &:first-child {
         flex: 2;
     }
+    position: relative;
 `;
 
-export const Content = styled.span`
+export const Content = styled.div`
     background: ${(props: ItemProp) => (props.active ? '#f7b36c' : '#fdf29a')};
-    height: 100%;
+    height: ${(props: ItemProp) => props.height}px;
     width: 100%;
     border-radius: 5px;
     display: flex;
@@ -74,5 +75,8 @@ export const LuckyLabel = styled.div`
     flex-direction: column;
 `;
 export const Img = styled.img`
-    margin-top: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 `;
