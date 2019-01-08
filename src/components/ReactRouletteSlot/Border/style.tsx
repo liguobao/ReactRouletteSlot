@@ -2,42 +2,30 @@
  * @Author: wzi
  * @Date: 2018-11-29 17:09:30
  * @Last Modified by: wzi
- * @Last Modified time: 2018-11-30 16:46:30
+ * @Last Modified time: 2019-01-08 18:00:19
  */
 
 import styled, { css } from '@common/helper/styled-component';
 const animation = css`
     @keyframes blueWinkle {
-        0% {
-            background: #4999da;
-            box-shadow: 0px 0px 10px 1px #a8c0d4;
-        }
+        0%,
         49% {
             background: #4999da;
             box-shadow: 0px 0px 10px 1px #a8c0d4;
         }
-        50% {
-            background: yellow;
-            box-shadow: 0px 0px 10px 1px white;
-        }
+        50%,
         100% {
             background: yellow;
             box-shadow: 0px 0px 10px 1px white;
         }
     }
     @keyframes yellowWinkle {
-        0% {
-            background: yellow;
-            box-shadow: 0px 0px 10px 1px white;
-        }
+        0%,
         49% {
             background: yellow;
             box-shadow: 0px 0px 10px 1px white;
         }
-        50% {
-            background: #4999da;
-            box-shadow: 0px 0px 10px 1px #a8c0d4;
-        }
+        50%,
         100% {
             background: #4999da;
             box-shadow: 0px 0px 10px 1px #a8c0d4;
