@@ -5,6 +5,8 @@ node_js:
 install:
     - yarn
     - yarn global add codecov
+before_script:
+    - yarn add react react-dom
 stages:
     - test
     - name: deploy
@@ -14,8 +16,7 @@ jobs:
           script:
           - yarn lint
           - yarn test 
-          before_script:
-          - yarn add react react-dom
+
           after_script:
             - codecov
         - stage: deploy
