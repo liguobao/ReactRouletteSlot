@@ -85,22 +85,29 @@ $ yarn open     ## 查看代码覆盖率
 ```typescript
 type ReactRouletteSlotProps = {
     // 抽奖数据
-    data: ReactRouletteSlot.RouletteSlotData;
+    data: RouletteSlotData;
     // 每行个数
     row?: number;
     action: ActionType;
     // 宽跟高
-    size?: number;
+    width: number;
+    height: number;
+    BingoItem?: (props: { data: RouletteSlotDataItem }) => JSX.Element;
+    LuckyButton?: () => JSX.Element;
 };
 ```
 
-### data: ReactRouletteSlot.RouletteSlotData
+| 属性        | 说明                                           | 类型                                                   | 默认值   |
+| ----------- | ---------------------------------------------- | ------------------------------------------------------ | -------- |
+| data        | 抽奖数据,长度必须为偶数, 建议 12 个.           | RouletteSlotData                                       | --       |
+| row         | 每行个数                                       | number                                                 | 4        |
+| action      | 点击抽奖的触发的方法,  不在组件内限制请求方式. | ActionType                                             | --       |
+| width       | 轮盘的宽度                                     | number                                                 | 300      |
+| height      | 轮盘的高度                                     | number                                                 | 300      |
+| BingoItem   | 中奖后提示内容, 要 React 组件                  | (props: { data: RouletteSlotDataItem }) => JSX.Element | 内部实现 |
+| LuckyButton |  中间抽奖按钮的样式                            | () => JSX.Element                                      | 内部实现 |
 
-抽奖数据,长度必须为偶数, 建议 12 个.
-
--   label: 名称或者 ReactElement
--   img: 图片地址
--   id: 商品 id
+### RouletteSlotData
 
 ```jsx
 // 数据格式
@@ -115,13 +122,7 @@ interface RouletteSlotDataItem {
 type RouletteSlotData = RouletteSlotDataItem[];
 ```
 
-### row: number
-
-每行个数, 默认为 4
-
-### action: ActionType
-
-点击抽奖的触发的方法,  不在组件内限制请求方式.
+### ActionType:
 
 -   data 为抽奖结果的 id
 -   isWin 为是否中奖的标识符, 默认为 true
@@ -133,4 +134,5 @@ type ActionType = (
 ```
 
 ## 💬 其他
+
 功能还不完善,有任何意见和建议,欢迎提[issue](https://github.com/wZi/ReactRouletteSlot/issues)
