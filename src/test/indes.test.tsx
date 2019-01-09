@@ -24,6 +24,6 @@ describe('APP', () => {
                 />
             )
         ).toBeTruthy();
-        expect(action).not.toBeCalled();
+
     });
 });
