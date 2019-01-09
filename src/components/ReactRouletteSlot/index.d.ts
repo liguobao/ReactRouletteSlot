@@ -38,30 +38,11 @@ type ReactRouletteSlotState = {
     // 处理过后的数据
     board: DataItem[][];
     boardData: DataItem[];
-    // 记录当前的active 位置
-    pointer: number;
-    // 记录转了几圈
-    round: number;
-    // 记录结束时转了几圈
-    endRound: number;
-    // 记录目标
-    target: number | string;
     // 是否在运行中
     run: boolean;
-    // 抽奖按钮的坐标
-    luckyButtonPosition: {
-        x: number;
-        y: number;
-    };
-    // 列
-    row: number;
-    // 行
-    col: number;
-    // 单元高度
-    itemHeight: number;
+    pointer: number;
 };
 declare class ReactRouletteSlot extends React.Component<
     ReactRouletteSlotProps,
     ReactRouletteSlotState
 > {}
-

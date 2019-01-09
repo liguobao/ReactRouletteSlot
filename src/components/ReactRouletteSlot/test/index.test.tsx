@@ -65,7 +65,7 @@ describe('Loading', () => {
     test('数据返回', () => {
         jest.advanceTimersByTime(20000);
         expect(_instance.onResultReturn).toBeCalled();
-        expect(_instance.state.endRound).toBe(2);
+        expect(_instance.endRound).toBe(2);
         expect(_instance.onSuccess).toBeCalled();
         expect(_instance.onFail).not.toBeCalled();
     });
@@ -77,7 +77,7 @@ describe('Loading', () => {
         _instance.onClick();
         _instance.onClick();
         jest.advanceTimersByTime(20000);
-        expect(_instance.state.endRound).toBe(0);
+        expect(_instance.endRound).toBe(0);
         expect(action).toBeCalled();
         expect(_instance.onFail).toBeCalled();
     });

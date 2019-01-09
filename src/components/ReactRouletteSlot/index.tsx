@@ -35,20 +35,33 @@ export class ReactRouletteSlot extends React.Component<
     state = {
         board: [[]],
         boardData: [],
-        pointer: -1,
-        target: null,
-        round: 0,
-        endRound: 0,
-        luckyButtonPosition: {
-            x: 0,
-            y: 0,
-        },
         run: false,
-        row: null,
-        col: null,
-        itemHeight: 0,
+        // 记录当前的active 位置
+        pointer: -1,
     };
     timer = null;
+
+    // 记录转了几圈
+    round: number = 0;
+    // 记录结束时转了几圈
+    endRound: number = 0;
+    // 记录目标
+    target: number | string = null;
+    // 抽奖按钮的坐标
+    luckyButtonPosition: {
+        x: number;
+        y: number;
+    } = {
+        x: 0,
+        y: 0,
+    };
+    // 列
+    row: number = 0;
+    // 行
+    col: number = 0;
+    // 单元高度
+    itemHeight: number = 0;
+
     componentWillMount() {
         this.dataHandler();
     }
@@ -63,7 +76,7 @@ export class ReactRouletteSlot extends React.Component<
     getBoardData = () => this.state.boardData;
 
     // 寻找目标节点
-    findTargetPointer = (target: number): DataItem =>
+    findTargetPointer = (target: number | string): DataItem =>
         this.getBoardData().find((cur) => {
             if (cur.type === 'button') {
                 return false;
@@ -80,12 +93,10 @@ export class ReactRouletteSlot extends React.Component<
     getLuckyButtonPosition = (data: RouletteSlotData, row: number) => {
         const x = row - 2;
         const y = (data.length - row * 2) / 2;
-        this.setState({
-            luckyButtonPosition: {
-                x,
-                y,
-            },
-        });
+        this.luckyButtonPosition = {
+            x,
+            y,
+        };
     };
     // 生成棋盘
     getBoard = (
@@ -151,21 +162,19 @@ export class ReactRouletteSlot extends React.Component<
             initData
         );
         this.joinButton(board, boardData, row);
+        this.row = row;
+        this.col = col;
+        this.itemHeight = this.getItemHeight(col);
         this.setState({
             board,
-            row,
-            col,
             boardData,
-            itemHeight: this.getItemHeight(col),
         });
 
         this.getLuckyButtonPosition(initData, row);
     };
     // 请求开奖结果的回调
     onResultReturn = ({ data }: { data: number | string }) => {
-        this.setState({
-            target: data,
-        });
+        this.target = data;
     };
     // 请求数据
     onFetch() {
@@ -176,12 +185,12 @@ export class ReactRouletteSlot extends React.Component<
     // 抽奖
     onClick = () => {
         if (!this.state.run) {
+            this.round = 0;
+            this.endRound = 0;
             // 点击启动跑马灯
             this.setState({
-                pointer: 0,
-                round: 0,
-                endRound: 0,
                 run: true,
+                pointer: 0,
             });
             this.onFetch();
             this.run();
@@ -204,15 +213,15 @@ export class ReactRouletteSlot extends React.Component<
     };
     position = () => {
         let pointer = this.state.pointer + 1;
-        let round = this.state.round;
+        let round = this.round;
         if (pointer >= this.props.data.length) {
             pointer = 0;
             round++;
         }
 
+        this.round = round;
         this.setState({
             pointer,
-            round,
         });
         return [pointer, round];
     };
@@ -223,13 +232,13 @@ export class ReactRouletteSlot extends React.Component<
         return clearInterval(this.timer);
     };
     runBeforeEnd = (pointer: number, time: number) => {
-        const target = this.findTargetPointer(this.state.target);
+        const target = this.findTargetPointer(this.target);
         if (!target) {
             return this.onFail();
         }
-        if (this.state.endRound < 2) {
+        if (this.endRound < 2) {
             if (pointer === target.position) {
-                this.setState({ endRound: this.state.endRound + 1 });
+                this.endRound = this.endRound + 1;
             }
             return this.run(this.getTime(time));
         }
@@ -243,7 +252,7 @@ export class ReactRouletteSlot extends React.Component<
     run = (time: number = 500) => {
         this.timer = setTimeout(() => {
             const [pointer, round] = this.position();
-            if (round > MIN_ROUND && this.state.target !== null) {
+            if (round > MIN_ROUND && this.target !== null) {
                 this.runBeforeEnd(pointer, time);
             } else {
                 this.run(this.getTime(time));
@@ -253,8 +262,8 @@ export class ReactRouletteSlot extends React.Component<
     // 抽奖按钮
     LuckyButton = () => (
         <LuckyButton
-            x={this.state.luckyButtonPosition.x}
-            y={this.state.luckyButtonPosition.y}
+            x={this.luckyButtonPosition.x}
+            y={this.luckyButtonPosition.y}
             onClick={this.onClick}
             disable={this.state.run}
         >
@@ -274,10 +283,7 @@ export class ReactRouletteSlot extends React.Component<
         data: RouletteSlotDataItem;
     }) => (
         <Item>
-            <Content
-                active={this.isActive(position)}
-                height={this.state.itemHeight}
-            >
+            <Content active={this.isActive(position)} height={this.itemHeight}>
                 <ContentItem>
                     <Img src={data.img} />
                 </ContentItem>
@@ -310,8 +316,8 @@ export class ReactRouletteSlot extends React.Component<
             <Border
                 width={this.props.width}
                 height={this.props.height}
-                row={this.state.row}
-                col={this.state.col}
+                row={this.row}
+                col={this.col}
                 isRun={this.state.run}
             >
                 <this.Board />
