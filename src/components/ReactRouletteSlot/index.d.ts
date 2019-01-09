@@ -30,9 +30,8 @@ declare type DataItem = {
     // 实际上数据的顺序
     position?: number;
 };
-declare type ActionType = (
-    cb: ({ data, isWin }: { data: number | string; isWin?: boolean }) => void
-) => void;
+declare type ReturnData = { data: number | string; isWin?: boolean };
+declare type ActionType = (cb: (res: ReturnData) => void) => void;
 
 type ReactRouletteSlotState = {
     // 处理过后的数据

@@ -28,7 +28,7 @@ const getContainer = () => {
 
 type AlertProp = {
     title?: string;
-    content?: string;
+    content?: string | JSX.Element;
     duration?: number;
     mask?: boolean;
 };

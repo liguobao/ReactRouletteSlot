@@ -15,6 +15,7 @@ import {
     LuckyLabel,
     ContentItem,
     Img,
+    BingoItem,
 } from './style';
 import { shouldUpdate } from '@common/decorator/decorator';
 import { compose } from '@common/helper/compose';
@@ -22,7 +23,7 @@ import emptyEnhancer from '@common/HOC/Empty';
 import errorBoundaryEnhancer from '@common/HOC/ErrorBoundary';
 import Border from './Border';
 import Alert from '@components/Alert';
-const MIN_ROUND = 2;
+const MIN_ROUND = 1;
 
 @shouldUpdate({
     props: ['data', 'action'],
@@ -46,7 +47,7 @@ export class ReactRouletteSlot extends React.Component<
     // 记录结束时转了几圈
     endRound: number = 0;
     // 记录目标
-    target: number | string = null;
+    target: ReturnData = null;
     // 抽奖按钮的坐标
     luckyButtonPosition: {
         x: number;
@@ -173,8 +174,8 @@ export class ReactRouletteSlot extends React.Component<
         this.getLuckyButtonPosition(initData, row);
     };
     // 请求开奖结果的回调
-    onResultReturn = ({ data }: { data: number | string }) => {
-        this.target = data;
+    onResultReturn = (res: ReturnData) => {
+        this.target = res;
     };
     // 请求数据
     onFetch() {
@@ -196,8 +197,12 @@ export class ReactRouletteSlot extends React.Component<
             this.run();
         }
     };
-    onSuccess = (target: DataItem) => {
-        Alert.show({ content: `恭喜您获得${target.data.label}` });
+    onSuccess = (target: DataItem, isWin: boolean = true) => {
+        const title = isWin ? '恭喜您中奖了' : '很遗憾, 没有中奖';
+        Alert.show({
+            title,
+            content: <this.BingoItem data={target} />,
+        });
         return this.reset();
     };
     onFail = () => {
@@ -232,7 +237,7 @@ export class ReactRouletteSlot extends React.Component<
         return clearInterval(this.timer);
     };
     runBeforeEnd = (pointer: number, time: number) => {
-        const target = this.findTargetPointer(this.target);
+        const target = this.findTargetPointer(this.target.data);
         if (!target) {
             return this.onFail();
         }
@@ -244,7 +249,7 @@ export class ReactRouletteSlot extends React.Component<
         }
 
         if (target.position === pointer) {
-            return this.onSuccess(target);
+            return this.onSuccess(target, this.target.isWin);
         }
         // 进入结束流程
         this.run(this.getTime(time, 30));
@@ -274,22 +279,36 @@ export class ReactRouletteSlot extends React.Component<
         </LuckyButton>
     );
 
-    // 物品节点
-    Item = ({
+    BingoItem = ({ data }: { data: DataItem }) => (
+        <BingoItem height={this.itemHeight * 1.5}>
+            <this.ItemContent data={data.data} imgSize={this.itemHeight} />
+        </BingoItem>
+    );
+
+    ItemContent = ({
         data,
-        position,
+        imgSize = this.itemHeight / 2,
     }: {
-        position: number;
         data: RouletteSlotDataItem;
+        imgSize?: number;
     }) => (
+        <>
+            <ContentItem>
+                <Img src={data.img} height={imgSize} />
+            </ContentItem>
+            <ContentItem>
+                <div>{data.label}</div>
+            </ContentItem>
+        </>
+    );
+    // 物品节点
+    Item = (props: { position: number; data: RouletteSlotDataItem }) => (
         <Item>
-            <Content active={this.isActive(position)} height={this.itemHeight}>
-                <ContentItem>
-                    <Img src={data.img} />
-                </ContentItem>
-                <ContentItem>
-                    <div>{data.label}</div>
-                </ContentItem>
+            <Content
+                active={this.isActive(props.position)}
+                height={this.itemHeight}
+            >
+                <this.ItemContent {...props} />
             </Content>
         </Item>
     );
