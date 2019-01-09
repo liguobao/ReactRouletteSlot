@@ -27,10 +27,13 @@ type ItemProp = {
     height: number;
 };
 export const Item = styled.td``;
-export const ContentItem = styled.span`
+export const ContentItem = styled.div`
     flex: 1;
     &:first-child {
-        flex: 2;
+        flex: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     position: relative;
 `;
@@ -73,9 +76,14 @@ export const LuckyLabel = styled.div`
     display: flex;
     flex-direction: column;
 `;
+type ImgProp = {
+    height: number;
+};
 export const Img = styled.img`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: ${(props: ImgProp) => (props.height ? props.height : 'auto')}px;
+`;
+export const BingoItem = styled.div`
+    height: ${(props: ImgProp) => props.height}px;
+    display: flex;
+    flex-direction: column;
 `;
