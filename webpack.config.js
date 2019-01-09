@@ -5,7 +5,6 @@
  * @Last Modified time: 2019-01-03 11:11:35
  */
 const path = require('path');
-const tsImportPluginFactory = require('ts-import-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const happyConfig = require('./config/happypack');
