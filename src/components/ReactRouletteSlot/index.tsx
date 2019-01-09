@@ -85,46 +85,39 @@ export class ReactRouletteSlot extends React.Component<
             return cur.data.id === target;
         });
     // 获得几列
-    getRow = (data: any[]) => (this.props.row || data.length < 9 ? 3 : 4);
+    getRow = () => (this.props.row || this.props.data.length < 9 ? 3 : 4);
     // 获得几行
-    getCol = (row: number) => (this.props.data.length - 2 * row) / 2 + 2;
+    getCol = () => (this.props.data.length - 2 * this.row) / 2 + 2;
     // 获得单元高度
-    getItemHeight = (col: number) => this.props.height / col - (col - 2) * 1;
+    getItemHeight = () => this.props.height / this.col - (this.col - 2) * 1;
     // 获得按钮的坐标数据
-    getLuckyButtonPosition = (data: RouletteSlotData, row: number) => {
-        const x = row - 2;
-        const y = (data.length - row * 2) / 2;
+    setLuckyButtonPosition = () => {
         this.luckyButtonPosition = {
-            x,
-            y,
+            x: this.row - 2,
+            y: (this.props.data.length - this.row * 2) / 2,
         };
     };
     // 生成棋盘
-    getBoard = (
-        row: number,
-        col: number,
-        length: number,
-        initData: RouletteSlotData
-    ): [DataItem[][], DataItem[]] => {
+    getBoard = (): [DataItem[][], DataItem[]] => {
         const board = [];
         const boardData = [];
         let position = 0;
         let Y = 0;
-        for (let x = 0; x < col; x++) {
+        for (let x = 0; x < this.col; x++) {
             board[x] = [];
 
-            for (let y = 0; y < row; y++) {
+            for (let y = 0; y < this.row; y++) {
                 Y = y;
                 if (x === 0) {
                     position = y;
-                } else if (x === col - 1) {
-                    position = row + col - 2 + y;
-                    Y = row - y - 1;
+                } else if (x === this.col - 1) {
+                    position = this.row + this.col - 2 + y;
+                    Y = this.row - y - 1;
                 } else if (y === 0 || y === 1) {
                     if (y === 0) {
-                        position = length - x;
+                        position = this.props.data.length - x;
                     } else {
-                        position = row + x - 1;
+                        position = this.row + x - 1;
                     }
                 }
                 if (position === -1) {
@@ -133,7 +126,7 @@ export class ReactRouletteSlot extends React.Component<
 
                 board[x][Y] = {
                     position,
-                    data: initData[position],
+                    data: this.props.data[position],
                     type: 'item',
                 };
                 position = -1;
@@ -144,34 +137,28 @@ export class ReactRouletteSlot extends React.Component<
         return [board, boardData];
     };
     // 加入抽奖按钮
-    joinButton = (board: DataItem[][], boardData: DataItem[], row: number) => {
+    joinButton = (board: DataItem[][], boardData: DataItem[]) => {
         const temp = board[1][1];
         const button: DataItem = { type: 'button' };
         board[1][1] = button;
         board[1][2] = temp;
-        boardData.splice(row + 1, 0, button);
+        boardData.splice(this.row + 1, 0, button);
     };
     // 根据数据生成行数, 列数, 棋盘, 抽奖按钮的数据
     dataHandler = () => {
-        const initData = this.props.data;
-        const row = this.getRow(initData);
-        const col = this.getCol(row);
-        const [board, boardData] = this.getBoard(
-            row,
-            col,
-            initData.length,
-            initData
-        );
-        this.joinButton(board, boardData, row);
-        this.row = row;
-        this.col = col;
-        this.itemHeight = this.getItemHeight(col);
+        this.row = this.getRow();
+        this.col = this.getCol();
+
+        const [board, boardData] = this.getBoard();
+        this.joinButton(board, boardData);
+
+        this.itemHeight = this.getItemHeight();
         this.setState({
             board,
             boardData,
         });
 
-        this.getLuckyButtonPosition(initData, row);
+        this.setLuckyButtonPosition();
     };
     // 请求开奖结果的回调
     onResultReturn = (res: ReturnData) => {
@@ -199,9 +186,10 @@ export class ReactRouletteSlot extends React.Component<
     };
     onSuccess = (target: DataItem, isWin: boolean = true) => {
         const title = isWin ? '恭喜您中奖了' : '很遗憾, 没有中奖';
+        const CurBingoItem = this.props.BingoItem || this.BingoItem;
         Alert.show({
             title,
-            content: <this.BingoItem data={target} />,
+            content: <CurBingoItem data={target.data} />,
         });
         return this.reset();
     };
@@ -272,16 +260,23 @@ export class ReactRouletteSlot extends React.Component<
             onClick={this.onClick}
             disable={this.state.run}
         >
-            <LuckyLabel>
-                <div>点击</div>
-                <div>抽奖</div>
-            </LuckyLabel>
+            {this.props.LuckyButton ? (
+                <this.props.LuckyButton />
+            ) : (
+                <this.LuckyContent />
+            )}
         </LuckyButton>
     );
+    LuckyContent = () => (
+        <LuckyLabel>
+            <div>点击</div>
+            <div>抽奖</div>
+        </LuckyLabel>
+    );
 
-    BingoItem = ({ data }: { data: DataItem }) => (
+    BingoItem = ({ data }: { data: RouletteSlotDataItem }) => (
         <BingoItem height={this.itemHeight * 1.5}>
-            <this.ItemContent data={data.data} imgSize={this.itemHeight} />
+            <this.ItemContent data={data} imgSize={this.itemHeight} />
         </BingoItem>
     );
 

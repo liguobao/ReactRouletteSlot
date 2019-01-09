@@ -23,6 +23,8 @@ declare type ReactRouletteSlotProps = {
     // 宽跟高
     width: number;
     height: number;
+    BingoItem?: (props: { data: RouletteSlotDataItem }) => JSX.Element;
+    LuckyButton?: () => JSX.Element;
 };
 declare type DataItem = {
     type: 'item' | 'button';
