@@ -2,10 +2,10 @@
  * @Author: wzi
  * @Date: 2018-10-01 10:47:26
  * @Last Modified by: wzi
- * @Last Modified time: 2019-01-03 14:34:19
+ * @Last Modified time: 2019-01-03 11:54:01
  */
-import * as React from 'react';
-export interface RouletteSlotDataItem {
+
+declare interface RouletteSlotDataItem {
     // 名称
     label: string | JSX.Element;
     // 图片
@@ -13,52 +13,37 @@ export interface RouletteSlotDataItem {
     // 商品 ID
     id: number;
 }
-export type RouletteSlotData = RouletteSlotDataItem[];
+declare type RouletteSlotData = RouletteSlotDataItem[];
 
-export type ReactRouletteSlotProps = {
+declare type ReactRouletteSlotProps = {
     data: RouletteSlotData;
     // 每行个数
     row?: number;
     action: ActionType;
     // 宽跟高
-    size?: number;
+    width: number;
+    height: number;
+    BingoItem?: (props: { data: RouletteSlotDataItem }) => JSX.Element;
+    LuckyButton?: () => JSX.Element;
 };
-export type DataItem = {
+declare type DataItem = {
     type: 'item' | 'button';
     data?: RouletteSlotDataItem;
     // 实际上数据的顺序
     position?: number;
 };
-export type ActionType = (
-    cb: ({ data, isWin }: { data: number | string; isWin?: boolean }) => void
-) => void;
+declare type ReturnData = { data: number | string; isWin?: boolean };
+declare type ActionType = (cb: (res: ReturnData) => void) => void;
 
 type ReactRouletteSlotState = {
     // 处理过后的数据
     board: DataItem[][];
     boardData: DataItem[];
-    // 记录当前的active 位置
-    pointer: number;
-    // 记录转了几圈
-    round: number;
-    // 记录结束时转了几圈
-    endRound: number;
-    // 记录目标
-    target: number | string;
     // 是否在运行中
     run: boolean;
-    // 抽奖按钮的坐标
-    luckyButtonPosition: {
-        x: number;
-        y: number;
-    };
-    // 列
-    row: number;
-    // 行
-    col: number;
+    pointer: number;
 };
-export default class ReactRouletteSlot extends React.Component<
+declare class ReactRouletteSlot extends React.Component<
     ReactRouletteSlotProps,
     ReactRouletteSlotState
 > {}
-

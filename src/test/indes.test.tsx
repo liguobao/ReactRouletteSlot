@@ -9,6 +9,7 @@ import ReactRouletteSlot from '@components/ReactRouletteSlot';
 import APP, { data, action } from '../app';
 import { mount } from 'enzyme';
 import '../index';
+jest.useFakeTimers();
 describe('APP', () => {
     test('APP', () => {
         const wrapper = mount(<APP />);
@@ -23,5 +24,6 @@ describe('APP', () => {
                 />
             )
         ).toBeTruthy();
+        expect(action).not.toBeCalled();
     });
 });
