@@ -13,8 +13,9 @@
 [![](https://img.shields.io/npm/l/react-roulette-slot.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com)](https://www.npmjs.com/package/react-roulette-slot)
 
 </div>
-<p align="center"><img  width="250" src="https://raw.githubusercontent.com/wZi/wZi/gh-pages/images/demo.png" /></center>
-<div align="center">基于React的轮盘抽奖程序<a href='https://wzi.github.io/ReactRouletteSlot/'>在线Demo</a></div>
+<p align="center"><img  width="250" src="https://ws1.sinaimg.cn/large/698831c8gy1fz9g2c17vfj209x09zdgr.jpg" /></center>
+<div align="center">基于React的轮盘抽奖程序
+<div><a href='https://wzi.github.io/ReactRouletteSlot/'>在线Demo</a></div></div>
 
 ---
 
@@ -28,6 +29,7 @@ yarn add react-roulette-slot --save
 ```
 
 ## 🔨 示例
+
 ```tsx
 import APP from 'react-roulette-slot';
 ReactDOM.render(<APP />, mountNode);
