@@ -21,7 +21,7 @@ jobs:
         - codecov
     - stage: deploy
       script:
-        - yarn build
+        - yarn build:lib
       deploy:
         provider: npm
         email: wzi.weng@gmail.com

@@ -12,14 +12,15 @@ const theme = require('./config/theme');
 const ROOT_PATH = path.resolve(__dirname);
 const NODE_PATH = path.join(ROOT_PATH, 'node_modules');
 
-const isPro = process.env.NODE_ENV === 'production';
+const isDemo = process.env.target === 'demo';
+const isPro = !isDemo &&  process.env.NODE_ENV === 'production';
 const getDevEntry = () =>
     isPro ? './src/components/ReactRouletteSlot' : './src';
 
 const getOutput = () => {
     return Object.assign(
         {
-            path: path.join(ROOT_PATH, './lib'),
+            path: isDemo ? path.join(ROOT_PATH, './dist') : path.join(ROOT_PATH, './lib'),
         },
         isPro
             ? {

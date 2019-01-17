@@ -14,7 +14,7 @@
 
 </div>
 <p align="center"><img  width="250" src="https://raw.githubusercontent.com/wZi/wZi/gh-pages/images/demo.png" /></center>
-<div align="center">基于React的轮盘抽奖程序</div>
+<div align="center">基于React的轮盘抽奖程序<a href='https://wzi.github.io/ReactRouletteSlot/'>在线Demo</div>
 
 ---
 
@@ -28,7 +28,6 @@ yarn add react-roulette-slot --save
 ```
 
 ## 🔨 示例
-
 ```tsx
 import APP from 'react-roulette-slot';
 ReactDOM.render(<APP />, mountNode);
