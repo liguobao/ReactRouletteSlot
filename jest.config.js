@@ -35,5 +35,5 @@ module.exports = {
     transformIgnorePatterns: ['<rootDir>/src/common/helper/Proxy.min.js'],
     setupFiles: ['<rootDir>/testConfig/setup.js'],
     // 每个测试启动前需要加载的js 脚本
-    setupTestFrameworkScriptFile: '<rootDir>/testConfig/setupTests.js',
+    setupFilesAfterEnv: ['<rootDir>/testConfig/setupTests.js'],
 };
