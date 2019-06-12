@@ -1,6 +1,6 @@
 {
     "name": "react-roulette-slot",
-    "version": "0.3.0",
+    "version": "0.3.2",
     "description": "ReactRouletteSlot 基于React的轮盘抽奖器",
     "main": "./lib/index.js",
     "typings": "./lib/index.d.ts",
@@ -17,7 +17,7 @@
         "lint": "tslint -p tsconfig.json",
         "update": "yarn upgrade --latest",
         "demo": "gh-pages -d dist",
-        "d": "yarn build && yarn publish"
+        "d": "yarn build:lib && yarn publish"
     },
     "dependencies": {
         "babel-polyfill": "^6.26.0",
