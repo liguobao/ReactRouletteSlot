@@ -1,101 +1,105 @@
 {
-    "name": "react-roulette-slot",
-    "version": "0.3.4",
-    "description": "ReactRouletteSlot 基于React的轮盘抽奖器",
-    "main": "./lib/index.js",
-    "typings": "./lib/index.d.ts",
-    "license": "MIT",
-    "scripts": {
-        "clean": "rm -rf dist/*.**.*s coverage/*",
-        "build:lib": "npm run clean && NODE_ENV=production webpack --mode production --progress",
-        "build": "npm run clean && NODE_ENV=production  target=demo webpack --mode production --progress",
-        "dev": "webpack-dev-server --mode development --hot --hotOnly",
-        "kill": "kill $(ps aux|grep 'tsc'|awk '{print $2}')",
-        "test": "jest  --runInBand",
-        "test:w": "jest --watch  --verbose=false",
-        "open": "open ./coverage/lcov-report/index.html",
-        "lint": "tslint -p tsconfig.json",
-        "update": "yarn upgrade --latest",
-        "demo": "gh-pages -d dist",
-        "d": "yarn build:lib && yarn publish"
-    },
-    "dependencies": {
-        "babel-polyfill": "^6.26.0",
-        "recompose": "^0.30.0",
-        "styled-components": "^4.3.1"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.4.5",
-        "@babel/preset-env": "^7.4.5",
-        "@babel/preset-react": "^7.0.0",
-        "@types/autoprefixer": "^9.5.0",
-        "@types/enzyme": "^3.9.3",
-        "@types/jest": "^24.0.13",
-        "@types/react": "^16.8.19",
-        "@types/react-dom": "^16.8.4",
-        "autoprefixer": "^9.6.0",
-        "babel-core": "^7.0.0-bridge.0",
-        "babel-jest": "^24.8.0",
-        "codecov": "^3.5.0",
-        "css-loader": "^3.0.0",
-        "enzyme": "^3.10.0",
-        "enzyme-adapter-react-16": "^1.14.0",
-        "enzyme-to-json": "^3.3.3",
-        "extract-text-webpack-plugin": "^3.0.2",
-        "file-loader": "^4.0.0",
-        "gh-pages": "^2.0.1",
-        "happypack": "^5.0.0",
-        "html-webpack-plugin": "^3.0.6",
-        "jest": "^24.8.0",
-        "jest-styled-components": "^6.1.1",
-        "jsdom": "15.1.1",
-        "jsdom-global": "3.0.2",
-        "less": "^3.0.1",
-        "less-loader": "^5.0.0",
-        "mockjs": "^1.0.1-beta3",
-        "postcss-loader": "^3.0.0",
-        "react": "^16.7.0",
-        "react-app-rewire-less": "^2.1.1",
-        "react-dom": "^16.7.0",
-        "react-hot-loader": "^4.11.0",
-        "react-perf-devtool": "^3.0.5",
-        "react-test-renderer": "^16.8.6",
-        "regenerator-runtime": "^0.13.2",
-        "source-map-loader": "^0.2.3",
-        "style-loader": "^0.23.0",
-        "ts-import-plugin": "^1.5.5",
-        "ts-jest": "^24.0.2",
-        "ts-loader": "^6.0.2",
-        "tslint": "^5.17.0",
-        "typescript": "^3.5.1",
-        "typescript-plugin-styled-components": "^1.4.3",
-        "uglifyjs-webpack-plugin": "^2.1.3",
-        "url-loader": "^2.0.0",
-        "webpack": "^4.33.0",
-        "webpack-bundle-analyzer": "^3.3.2",
-        "webpack-cli": "^3.3.4",
-        "webpack-dev-server": "^3.7.1"
-    },
-    "engines": {
-        "node": ">=10.0.0"
-    },
-    "ci": {
-        "version": "6, 7, 8"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wZi/ReactRouletteSlot.git"
-    },
-    "keywords": [
-        "React",
-        "Slot",
-        "Roulette",
-        "TypeScript"
-    ],
-    "author": "wZi",
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
+  "name": "react-roulette-slot",
+  "version": "0.3.4",
+  "description": "ReactRouletteSlot 基于React的轮盘抽奖器",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf dist/*.**.*s coverage/*",
+    "build:lib": "npm run clean && NODE_ENV=production webpack --mode production --progress",
+    "build": "npm run clean && NODE_ENV=production  target=demo webpack --mode production --progress",
+    "dev": "webpack-dev-server --mode development --hot --hotOnly",
+    "kill": "kill $(ps aux|grep 'tsc'|awk '{print $2}')",
+    "test": "jest  --runInBand",
+    "test:w": "jest --watch  --verbose=false",
+    "open": "open ./coverage/lcov-report/index.html",
+    "lint": "tslint -p tsconfig.json",
+    "update": "yarn upgrade --latest",
+    "demo": "gh-pages -d dist",
+    "d": "yarn build:lib && yarn publish",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "recompose": "^0.30.0",
+    "styled-components": "^4.3.1",
+    "snyk": "^1.189.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@types/autoprefixer": "^9.5.0",
+    "@types/enzyme": "^3.9.3",
+    "@types/jest": "^24.0.13",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "autoprefixer": "^9.6.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.8.0",
+    "codecov": "^3.5.0",
+    "css-loader": "^3.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^4.0.0",
+    "gh-pages": "^2.0.1",
+    "happypack": "^5.0.0",
+    "html-webpack-plugin": "^3.0.6",
+    "jest": "^24.8.0",
+    "jest-styled-components": "^6.1.1",
+    "jsdom": "15.1.1",
+    "jsdom-global": "3.0.2",
+    "less": "^3.0.1",
+    "less-loader": "^5.0.0",
+    "mockjs": "^1.0.1-beta3",
+    "postcss-loader": "^3.0.0",
+    "react": "^16.7.0",
+    "react-app-rewire-less": "^2.1.1",
+    "react-dom": "^16.7.0",
+    "react-hot-loader": "^4.11.0",
+    "react-perf-devtool": "^3.0.5",
+    "react-test-renderer": "^16.8.6",
+    "regenerator-runtime": "^0.13.2",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.23.0",
+    "ts-import-plugin": "^1.5.5",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.2",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1",
+    "typescript-plugin-styled-components": "^1.4.3",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "url-loader": "^2.0.0",
+    "webpack": "^4.33.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "ci": {
+    "version": "6, 7, 8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wZi/ReactRouletteSlot.git"
+  },
+  "keywords": [
+    "React",
+    "Slot",
+    "Roulette",
+    "TypeScript"
+  ],
+  "author": "wZi",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "snyk": true
 }
